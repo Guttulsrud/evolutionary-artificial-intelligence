@@ -1,86 +1,35 @@
-# Implement in Python a cellular automaton which receives argument(s) to define its rule.
-
-
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-import warnings
 
-powers_of_two = np.array([[4], [2], [1]])  # shape (3, 1)
+from src.update_rules import get_update_rules
 
-
-def step(x, rule_binary):
-    """Makes one step in the cellular automaton.
-    Args:
-        x (np.array): current state of the automaton
-        rule_binary (np.array): the update rule
-    Returns:
-        np.array: updated state of the automaton
-    """
-    x_shift_right = np.roll(x, 1)  # circular shift to right
-    x_shift_left = np.roll(x, -1)  # circular shift to left
-    y = np.vstack((x_shift_right, x, x_shift_left)).astype(np.int8)  # stack row-wise, shape (3, cols)
-    z = np.sum(powers_of_two * y, axis=0).astype(np.int8)  # LCR pattern as number
-
-    return rule_binary[7 - z]
+rules = get_update_rules()
 
 
-import numpy as np
+def render(grid):
+    plt.imshow(grid, vmin=0, vmax=1)
+    plt.show()
 
 
-def cellular_automaton(rule_number, size, steps,
-                       init_cond='random', impulse_pos='center'):
-    """Generate the state of an elementary cellular automaton after a pre-determined
-    number of steps starting from some random state.
-    Args:
-        rule_number (int): the number of the update rule to use
-        size (int): number of cells in the row
-        steps (int): number of steps to evolve the automaton
-        init_cond (str): either `random` or `impulse`. If `random` every cell
-        in the row is activated with prob. 0.5. If `impulse` only one cell
-        is activated.
-        impulse_pos (str): if `init_cond` is `impulse`, activate the
-        left-most, central or right-most cell.
-    Returns:
-        np.array: final state of the automaton
-    """
-    assert 0 <= rule_number <= 255
-    assert init_cond in ['random', 'impulse']
-    assert impulse_pos in ['left', 'center', 'right']
+def createCellularAutomaton(side_length, update_rule):
+    grid = np.random.rand(side_length, side_length)
 
-    rule_binary_str = np.binary_repr(rule_number, width=8)
-    rule_binary = np.array([int(ch) for ch in rule_binary_str], dtype=np.int8)
-    x = np.zeros((steps, size), dtype=np.int8)
-
-    if init_cond == 'random':  # random init of the first step
-        x[0, :] = np.array(np.random.rand(size) < 0.5, dtype=np.int8)
-
-    if init_cond == 'impulse':  # starting with an initial impulse
-        if impulse_pos == 'left':
-            x[0, 0] = 1
-        elif impulse_pos == 'right':
-            x[0, size - 1] = 1
-        else:
-            x[0, size // 2] = 1
-
-    for i in range(steps - 1):
-        x[i + 1, :] = step(x[i, :], rule_binary)
-
-    return x
+    for x in range(5):
+        render(grid)
+        grid = step(grid, update_rule)
 
 
-rule_number = 60  # select the update rule
-size = 100  # number of cells in one row
-steps = 63  # number of time steps
-init_cond = 'impulse'  # start with only one cell
-impulse_pos = 'left'  # start with the left-most cell
+def step(grid, update_rule):
+    update_value = rules[update_rule]
+    new_grid = np.zeros(shape=grid.shape)
 
-x = cellular_automaton(rule_number, size, steps, init_cond, impulse_pos)
+    for row_index, row in enumerate(grid):
+        for column_index, value in enumerate(row):
+            new_value = update_value(grid, row_index, column_index)
 
-fig = plt.figure(figsize=(10, 10))
+            new_grid[row_index][column_index] = new_value
 
-ax = plt.axes()
-ax.set_axis_off()
+    return new_grid
 
-ax.imshow(x, interpolation='none', cmap='RdPu')
-plt.savefig('elementary_cellular_automaton.png', dpi=300, bbox_inches='tight')
+
+createCellularAutomaton(side_length=20, update_rule='move_down')
