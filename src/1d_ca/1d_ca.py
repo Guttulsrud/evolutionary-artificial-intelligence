@@ -1,49 +1,49 @@
+import numpy
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.ndimage.interpolation import shift
 
 
 def render(vector):
     print(vector)
-    return
-    vector = np.expand_dims(vector, 0)
-    plt.imshow(vector, vmin=0, vmax=1, cmap='BuGn')
-    plt.axis('off')
-    plt.show()
+    # vector = np.expand_dims(vector, 0)
+    # plt.imshow(vector, vmin=0, vmax=1, cmap='BuGn')
+    # plt.axis('off')
+    # plt.show()
 
 
 def createCellularAutomaton(width):
-    vector = np.random.choice([0, 1], size=(width,))
-
+    vector = np.random.choice(['0', '1'], size=(width,))
     return vector
 
 
-def step(vector, rule_lookup, boundary_condition):
+def step(vector, rule_map, boundary_condition):
+
+    new_vector = np.empty((len(vector),), dtype=str)
+
+    lefts = np.roll(vector, 1)
+    rights = np.roll(vector, -1)
+    for index, (left, center, right) in enumerate(zip(lefts, vector, rights)):
+        rule_map_key = left + center + right
+        new_vector[index] = rule_map[rule_map_key]
+
+    return new_vector
 
 
-    print(vector)
-    print(rule_lookup)
-    return vector
-
-
-def make_rule_lookup(rule_number):
+def make_rule_map(rule_number):
     if rule_number > 255:
         return False
 
     binary_keys = [np.binary_repr(x, 3) for x in range(8)]
     binary_keys = np.flipud(binary_keys)
-
     rule = np.binary_repr(rule_number, width=8)
-
     return {binary_keys[i]: rule[i] for i in range(8)}
 
 
 boundary_condition = 'periodic'
-rule_map = make_rule_lookup(91)
+rule_map = make_rule_map(91)
 ca = createCellularAutomaton(width=12)
-
 step(ca, rule_map, boundary_condition)
-
-
 
 # np.random.choice([0, 1], size=(width,))
 
