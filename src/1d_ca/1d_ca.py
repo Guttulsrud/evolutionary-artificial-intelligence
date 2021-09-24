@@ -1,15 +1,13 @@
-import numpy
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.ndimage.interpolation import shift
 
 
 def render(vector):
-    print(vector)
+    # print(vector)
     # vector = np.expand_dims(vector, 0)
-    # plt.imshow(vector, vmin=0, vmax=1, cmap='BuGn')
-    # plt.axis('off')
-    # plt.show()
+    plt.imshow(vector, vmin=0, vmax=1, cmap='BuGn')
+    plt.axis('off')
+    plt.show()
 
 
 def createCellularAutomaton(width):
@@ -41,10 +39,13 @@ def make_rule_map(rule_number):
 
 
 boundary_condition = 'periodic'
-rule_map = make_rule_map(91)
-ca = createCellularAutomaton(width=12)
-step(ca, rule_map, boundary_condition)
-
+rule_map = make_rule_map(90)
+ca = createCellularAutomaton(width=24)
+history = [[int(x) for x in ca]]
+for _ in range(30):
+    ca = step(ca, rule_map, boundary_condition)
+    history.append([int(x) for x in ca])
+render(history)
 # np.random.choice([0, 1], size=(width,))
 
 
