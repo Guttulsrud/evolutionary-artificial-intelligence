@@ -6,20 +6,20 @@ from src.update_rules import get_update_rules
 rules = get_update_rules()
 
 
-def render(grid):
+def render2D(grid):
     plt.imshow(grid, vmin=0, vmax=1)
     plt.show()
 
 
-def createCellularAutomaton(side_length, update_rule):
+def create2DCellularAutomaton(side_length, update_rule, time_steps):
     grid = np.random.rand(side_length, side_length)
 
-    for x in range(5):
-        render(grid)
-        grid = step(grid, update_rule)
+    for x in range(time_steps):
+        render2D(grid)
+        grid = step2D(grid, update_rule)
 
 
-def step(grid, update_rule):
+def step2D(grid, update_rule):
     update_value = rules[update_rule]
     new_grid = np.zeros(shape=grid.shape)
 
@@ -31,5 +31,4 @@ def step(grid, update_rule):
 
     return new_grid
 
-
-createCellularAutomaton(side_length=20, update_rule='move_down')
+# create2DCellularAutomaton(side_length=12, update_rule='move_down', time_steps=10)
