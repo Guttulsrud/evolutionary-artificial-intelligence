@@ -1,34 +1,18 @@
-import numpy as np
-import matplotlib.pyplot as plt
+from src.cellular_automata.CAC import CellularAutomataController
 
-from src.update_rules import get_update_rules
+config = {
+    "time_steps": 10,
+    "high": 1,
+    "high_threshold": 0.1,
+    "low": 1,
+    "low_threshold": -0.1,
+    "output": 1,
+    "n_neighbours": 2,
+    "width": 12,
+    "rule_number": 191,
+    "boundary_condition": "periodic"
+}
 
-rules = get_update_rules()
+CAC = CellularAutomataController(config=config)
 
-
-def render2D(grid):
-    plt.imshow(grid, vmin=0, vmax=1)
-    plt.show()
-
-
-def create2DCellularAutomaton(side_length, update_rule, time_steps):
-    grid = np.random.rand(side_length, side_length)
-
-    for x in range(time_steps):
-        render2D(grid)
-        grid = step2D(grid, update_rule)
-
-
-def step2D(grid, update_rule):
-    update_value = rules[update_rule]
-    new_grid = np.zeros(shape=grid.shape)
-
-    for row_index, row in enumerate(grid):
-        for column_index, value in enumerate(row):
-            new_value = update_value(grid, row_index, column_index)
-
-            new_grid[row_index][column_index] = new_value
-
-    return new_grid
-
-# create2DCellularAutomaton(side_length=12, update_rule='move_down', time_steps=10)
+CAC.run(None)
