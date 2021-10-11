@@ -4,37 +4,32 @@ from src.cellular_automata.CAC import CellularAutomataController
 
 env = gym.make('CartPole-v0')
 
-config = {
-    "time_steps": 10,
-    "high": 1,
-    "high_threshold": 0.1,
-    "low": 1,
-    "low_threshold": -0.1,
-    "output": 1,
-    "n_neighbours": 2,
-    "width": 12,
-    "rule_number": 191,
-    "boundary_condition": "periodic"
-}
 
-CAC = CellularAutomataController(config=config)
+def run_cart(config: dict, render: bool = False) -> [int]:
+    CAC = CellularAutomataController(config=config)
 
+    episodes = 5
+    time_steps = 100
 
-class Gym:
-    def run(self):
-        for i_episode in range(30):
-            observation = env.reset()
-            for t in range(100):
+    list_of_scores = []
+
+    for i_episode in range(episodes):
+        observation = env.reset()
+        for t in range(time_steps):
+            if render:
                 env.render()
 
-                action = CAC.run(observation=format_observation(observation))
+            observation = format_observation(observation)
+            action = CAC.run(observation=observation)
 
-                observation, reward, done, info = env.step(action)
-                if done:
-                    print("Episode finished after {} timesteps".format(t + 1))
-                    break
-            break
-        env.close()
+            observation, reward, done, info = env.step(action)
+            score = t + 1
+            if done:
+                list_of_scores.append(score)
+                break
+
+    env.close()
+    return list_of_scores
 
 
 def format_observation(observation):
@@ -44,6 +39,3 @@ def format_observation(observation):
         "pole_angle": observation[2],
         "pole_angular_velocity": observation[3]
     }
-
-
-Gym().run()

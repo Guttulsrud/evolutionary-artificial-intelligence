@@ -7,7 +7,7 @@ config = {
     "low": 1,
     "low_threshold": -0.1,
     "output": 1,
-    "n_neighbours": 2,
+    "kernel_size": 2,
     "width": 12,
     "rule_number": 191,
     "boundary_condition": "periodic"
