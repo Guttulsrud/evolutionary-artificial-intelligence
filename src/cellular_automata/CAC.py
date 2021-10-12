@@ -9,22 +9,27 @@ class CellularAutomataController:
         self.config = config
         self.rule_map: dict = self.make_rule_map()
 
-    def run(self, observation: dict, render=None) -> int:
+    def run(self, observation: dict, render_ca=False) -> int:
         step_range = self.config['time_steps']
-        ca = self.createCellularAutomaton()
+        ca = self.createCellularAutomaton(observation=observation)
         history = [ca]
 
         for _ in range(step_range):
             ca = self.step(vector=ca)
             history.append(ca)
-        if render:
+        if render_ca:
             render(history)
 
         action = ca[self.config['action_index']]
         return int(action)
 
-    def createCellularAutomaton(self):
+    def createCellularAutomaton(self, observation):
         vector = np.random.choice(['0'], size=(self.config['width'],))
+
+        angle_index_value = '1' if observation['pole_angle'] > 0 else '0'
+
+        vector[self.config['angle_index']] = angle_index_value
+
         return vector
 
     def step(self, vector: list) -> list:

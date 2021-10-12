@@ -20,7 +20,7 @@ def run_cart(config: dict, render: bool = False) -> [int]:
                 env.render()
 
             observation = format_observation(observation)
-            action = CAC.run(observation=observation)
+            action = CAC.run(observation=observation, render_ca=render)
 
             observation, reward, done, info = env.step(action)
             score = t + 1
@@ -39,3 +39,7 @@ def format_observation(observation):
         "pole_angle": observation[2],
         "pole_angular_velocity": observation[3]
     }
+
+
+# run_cart({'time_steps': 5, 'width': 5, 'kernel_size': 3, 'angle_index': 0, 'action_index': 2,
+#           'rule_number': 121}, render=True)

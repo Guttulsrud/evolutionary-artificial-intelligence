@@ -2,15 +2,15 @@ def get_config_dict() -> dict:
     return {
         'independent_properties': {
             'time_steps': {
-                'max': 100,
-                'min': 1,
+                'max': 10,
+                'min': 10,
             },
             'kernel_size': {
-                'values': [3, 5],
+                'values': [3],
             },
             'width': {
-                'max': 100,
-                'min': 1,
+                'max': 10,
+                'min': 10,
             },
         },
         'dependent_properties': {
