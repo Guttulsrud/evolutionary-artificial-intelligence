@@ -1,7 +1,7 @@
 import numpy as np
 
-from src.cellular_automata.config import get_max_rule
-from src.utils.plot import render
+from cellular_automata.config import get_max_rule
+from utils.plot import render
 
 
 class CellularAutomataController:
@@ -11,7 +11,7 @@ class CellularAutomataController:
 
     def run(self, observation: dict, render_ca=False) -> int:
         step_range = self.config['time_steps']
-        ca = self.createCellularAutomaton(observation=observation)
+        ca = self.create_cellular_automaton(observation=observation)
         history = [ca]
 
         for _ in range(step_range):
@@ -23,8 +23,8 @@ class CellularAutomataController:
         action = ca[self.config['action_index']]
         return int(action)
 
-    def createCellularAutomaton(self, observation):
-        vector = np.random.choice(['0'], size=(self.config['width'],))
+    def create_cellular_automaton(self, observation):
+        vector = np.random.choice(['0', '1'], size=(self.config['width'],))
 
         angle_index_value = '1' if observation['pole_angle'] > 0 else '0'
 

@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from src.update_rules import get_update_rules
+from update_rules import get_update_rules
 
 rules = get_update_rules()
 

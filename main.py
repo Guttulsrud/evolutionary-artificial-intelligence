@@ -1,10 +1,12 @@
 import json
 import random
 import numpy as np
-from src.cartpole import run_cart
-from src.cellular_automata.config import get_max_rule
-from src.evolutionary.config import get_config_dict
+from cartpole import run_cart
+from cellular_automata.config import get_max_rule
+from evolutionary.config import get_config_dict
 from scipy.special import softmax
+import os
+from datetime import datetime
 
 
 def init_population(population_size):
@@ -35,14 +37,19 @@ def init_population(population_size):
 
 
 def main():
-    population_limit = 100
-    n_generations = 100
+    population_limit = 10
+    n_generations = 10
     population = init_population(population_limit)
+    results = {
+        'top_score': 0,
+        'best_gen': None,
+        'generations': []
+    }
 
     for generation in range(n_generations):
 
         for individual in population:
-            individual['score_history'] = run_cart(individual['genotype'])
+            individual['score_history'] = run_cart(individual['genotype'], render=False)
             individual['score'] = np.mean(individual['score_history'])
 
         population = sorted(population, key=lambda d: d['score'], reverse=True)
@@ -58,10 +65,30 @@ def main():
             child_genotype = mutate_genotype(parent['genotype'])
             population.append({'genotype': child_genotype})
 
-
         best_rule_number = population[0]["genotype"]["rule_number"]
-        print(f'Gen: {generation+1}. Rule: {best_rule_number}. Score: {population[0]["score"]}.')
-        # print(population[0[]])
+        best_gen_score = population[0]["score"]
+        print(f'Gen: {generation + 1}. Rule: {best_rule_number}. Score: {best_gen_score}.')
+
+        if best_gen_score > results['top_score']:
+            results['top_score'] = best_gen_score
+            results['best_gen'] = generation
+
+        results['generations'].append({
+            'gen_number': generation,
+            'best_rule_number': best_rule_number,
+            'population': population
+        })
+    save_to_file(results)
+
+
+def save_to_file(results):
+    now = datetime.now()
+    dt_string = now.strftime("%Y-%m-%d-%H-%M-%S")
+    path = f'results/{dt_string}'
+    os.mkdir(path)
+
+    with open(f'{path}/results.json', 'w') as outfile:
+        json.dump(results, outfile)
 
 
 def mutate_genotype(genotype: dict) -> dict:

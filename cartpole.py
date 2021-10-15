@@ -1,6 +1,6 @@
 import gym
 
-from src.cellular_automata.CAC import CellularAutomataController
+from cellular_automata.CAC import CellularAutomataController
 
 env = gym.make('CartPole-v0')
 
@@ -8,7 +8,7 @@ env = gym.make('CartPole-v0')
 def run_cart(config: dict, render: bool = False) -> [int]:
     CAC = CellularAutomataController(config=config)
 
-    episodes = 5
+    episodes = 3
     time_steps = 100
 
     list_of_scores = []
@@ -20,7 +20,7 @@ def run_cart(config: dict, render: bool = False) -> [int]:
                 env.render()
 
             observation = format_observation(observation)
-            action = CAC.run(observation=observation, render_ca=render)
+            action = CAC.run(observation=observation, render_ca=False)
 
             observation, reward, done, info = env.step(action)
             score = t + 1
@@ -28,7 +28,7 @@ def run_cart(config: dict, render: bool = False) -> [int]:
                 list_of_scores.append(score)
                 break
 
-    env.close()
+    # env.close()
     return list_of_scores
 
 
