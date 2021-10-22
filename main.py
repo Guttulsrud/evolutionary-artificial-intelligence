@@ -1,7 +1,7 @@
 from classes.Population import Population
 from utils.general_utils import save_to_file
 
-population_limit = 10
+population_limit = 100
 n_generations = 150
 results = {
     'best': {
@@ -22,6 +22,7 @@ def main():
         best_rule_number = individuals[0].get_genotype()["rule_number"]
         best_gen_score = individuals[0].get_fitness_score()
         print(f'Gen: {generation + 1}. Rule: {best_rule_number}. Score: {best_gen_score}.')
+        #print([str(x) for x in individuals])
 
         if best_gen_score > results['best']['score']:
             results['best']['score'] = best_gen_score

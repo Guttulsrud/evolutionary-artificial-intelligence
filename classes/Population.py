@@ -17,8 +17,7 @@ class Population:
     def create(self):
         for x in range(self.population_limit):
             kernel_size = 3
-            rule_number = 81
-            # rule_number = random.randrange(0, get_max_rule(kernel_size))
+            rule_number = random.randrange(0, get_max_rule(kernel_size))
 
             individual = Individual({
                 'time_steps': 5,
