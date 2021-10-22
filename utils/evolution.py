@@ -13,7 +13,7 @@ def get_config_dict() -> dict:
                 'values': [3],
             },
             'width': {
-                'max': 10,
+                'max': 50,
                 'min': 10,
             },
         },

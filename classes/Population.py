@@ -17,15 +17,86 @@ class Population:
     def create(self):
         for x in range(self.population_limit):
             kernel_size = 3
-            rule_number = 81
-            # rule_number = random.randrange(0, get_max_rule(kernel_size))
-
+            width = random.randrange(50, 70)
+            time_steps = 20
+            rule_number = random.randrange(0, get_max_rule(kernel_size))
             individual = Individual({
-                'time_steps': 5,
-                'width': 5,
+                'time_steps': time_steps,
+                'width': width,
                 'kernel_size': kernel_size,
-                'angle_index': 0,
-                'action_index': 2,
+                'pole':
+                    {
+                        'angle': [
+                            {'value': -0, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': -0, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': -0.1, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': -0.1, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': -0.12, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': -0.12, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': -0.15, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': -0.15, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': 0, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': 0, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': 0.1, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': 0.1, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': 0.12, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': 0.12, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': 0.15, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': 0.15, 'gt': False, 'index': random.randrange(0, width)},
+                        ],
+                        'velocity': [
+                            {'value': -1, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': -1, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': -2, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': -2, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': 0, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': 0, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': 0.3, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': 0.3, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': 0.5, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': 0.5, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': 1, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': 1, 'gt': False, 'index': random.randrange(0, width)},
+                            {'value': 2, 'gt': True, 'index': random.randrange(0, width)},
+                            {'value': 2, 'gt': False, 'index': random.randrange(0, width)},
+                        ]
+                    },
+
+                'cart': {
+                    'position': [
+                        {'value': -0.01, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': -0.01, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': -0.02, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': -0.03, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': -0.03, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': -0.03, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': 0, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': 0, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': 0.01, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': 0.01, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': 0.02, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': 0.03, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': 0.03, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': 0.03, 'gt': False, 'index': random.randrange(0, width)},
+                    ],
+                    'velocity': [
+                        {'value': -0.2, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': -0.2, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': -0.3, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': -0.3, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': -0.5, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': -0.5, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': 0, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': 0, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': 0.2, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': 0.2, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': 0.3, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': 0.3, 'gt': False, 'index': random.randrange(0, width)},
+                        {'value': 0.5, 'gt': True, 'index': random.randrange(0, width)},
+                        {'value': 0.5, 'gt': False, 'index': random.randrange(0, width)},
+                    ]
+                },
+                'action_index': random.randrange(0, width),
                 'rule_number': rule_number
             })
 
@@ -39,6 +110,8 @@ class Population:
             run_cart(individual, render)
 
         survivors = self.select_survivors()
+
+        # survivors = self.individuals
 
         n = self.population_limit - len(survivors)
         soft_maxed_weights = softmax([individual.get_fitness_score() for individual in survivors])

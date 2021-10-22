@@ -34,7 +34,7 @@ class Individual:
             '1': '0',
             '0': '1'
         }
-        mutation_rate = 0.25
+        mutation_rate = 0.1
         for idx, i in enumerate(rule_number):
             will_mutate = random.uniform(0, 1) < mutation_rate
 

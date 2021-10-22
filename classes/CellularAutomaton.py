@@ -23,9 +23,24 @@ class CellularAutomaton:
         return action
 
     def create(self, observation: dict) -> dict:
+        pole_angle = observation['pole_angle']
+        pole_angular_velocity = observation['pole_angular_velocity']
+        cart_position = observation['cart_position']
+        cart_velocity = observation['cart_velocity']
+
         vector = np.random.choice(['0', '1'], size=(self.genotype['width'],))
-        angle_index_value = '1' if observation['pole_angle'] > 0 else '0'
-        vector[self.genotype['angle_index']] = angle_index_value
+
+        for threshold in self.genotype['pole']['angle']:
+            vector[threshold['index']] = determine_threshold(threshold, pole_angle)
+
+        for threshold in self.genotype['pole']['velocity']:
+            vector[threshold['index']] = determine_threshold(threshold, pole_angular_velocity)
+
+        for threshold in self.genotype['cart']['position']:
+            vector[threshold['index']] = determine_threshold(threshold, cart_position)
+
+        for threshold in self.genotype['cart']['velocity']:
+            vector[threshold['index']] = determine_threshold(threshold, cart_velocity)
 
         return vector
 
@@ -68,3 +83,14 @@ class CellularAutomaton:
         rule_map = {binary_keys[i]: rule[i] for i in range(n_configurations)}
 
         return rule_map
+
+
+def determine_threshold(threshold_object, value):
+    threshold_value = threshold_object['value']
+    gt = threshold_object['gt']
+
+    if gt:
+        return '1' if value > threshold_value else '0'
+    else:
+        return '1' if value < threshold_value else '0'
+
