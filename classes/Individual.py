@@ -27,6 +27,9 @@ class Individual:
 
         return child
 
+    def __str__(self):
+        return str(self.genotype['rule_number'])
+
     def mutate_genotype(self) -> dict:
         mutated_genotype = self.genotype.copy()
         rule_number = list(np.binary_repr(self.genotype['rule_number']))

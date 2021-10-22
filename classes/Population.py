@@ -111,8 +111,6 @@ class Population:
 
         survivors = self.select_survivors()
 
-        # survivors = self.individuals
-
         n = self.population_limit - len(survivors)
         soft_maxed_weights = softmax([individual.get_fitness_score() for individual in survivors])
 
