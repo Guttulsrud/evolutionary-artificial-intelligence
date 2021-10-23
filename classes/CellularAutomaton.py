@@ -87,10 +87,5 @@ class CellularAutomaton:
 
 def determine_threshold(threshold_object, value):
     threshold_value = threshold_object['value']
-    gt = threshold_object['gt']
-
-    if gt:
-        return '1' if value > threshold_value else '0'
-    else:
-        return '1' if value < threshold_value else '0'
+    return '1' if value > threshold_value else '0'
 

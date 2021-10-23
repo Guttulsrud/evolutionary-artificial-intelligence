@@ -27,17 +27,14 @@ class Individual:
 
         return child
 
-    def __str__(self):
-        return str(self.genotype['rule_number'])
-
-    def mutate_genotype(self) -> dict:
+    def mutate_genotype(self):
         mutated_genotype = self.genotype.copy()
         rule_number = list(np.binary_repr(self.genotype['rule_number']))
         temp = {
             '1': '0',
             '0': '1'
         }
-        mutation_rate = 0.1
+        mutation_rate = 0.2
         for idx, i in enumerate(rule_number):
             will_mutate = random.uniform(0, 1) < mutation_rate
 

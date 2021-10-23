@@ -22,10 +22,10 @@ def run_cart(individual: Individual, render: bool = False) -> [int]:
 
             observation, reward, done, info = env.step(action)
             observation = format_observation(observation)
+
             fitnesses = np.append(fitnesses,
-                                  calculate_time_step_fitness(observation, t, fitness_function='angle_based'))
+                                  calculate_time_step_fitness(observation, t, fitness_function='total_time_steps'))
             if done:
-                print(fitnesses)
                 individual.add_fitness_score(np.sum(fitnesses))
                 break
 

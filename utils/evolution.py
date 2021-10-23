@@ -42,7 +42,7 @@ def get_criterion_function(criterion_name: str):
 
 
 def fitness_proportional_selection(population: list, survival_rate: float = 0.2):
-    soft_maxed_weights = softmax([individual.get_fitness_score() for individual in population])
+    logged_list = softmax([np.log(individual.get_fitness_score()) for individual in population])
     size = int(survival_rate * len(population))
-    survivors = np.random.choice(population, size=size, replace=False, p=soft_maxed_weights)
+    survivors = np.random.choice(population, size=size, replace=False, p=logged_list)
     return survivors
