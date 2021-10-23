@@ -85,6 +85,7 @@ class Population:
         survivors = self.select_survivors(self.individuals)
 
         n = self.config['population_limit'] - len(survivors)
+
         logged_list = softmax([np.log(individual.get_fitness_score()) for individual in self.individuals])
 
         new_population = survivors

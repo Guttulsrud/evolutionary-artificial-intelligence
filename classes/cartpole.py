@@ -4,10 +4,10 @@ import numpy as np
 from classes.Individual import Individual
 
 env = gym.make('CartPole-v0')
+env._max_episode_steps = 500
 
 
 def run_cart(individual: Individual, config: dict) -> [int]:
-
     for i_episode in range(config['episodes_per_individual']):
         observation = format_observation(env.reset())
 
@@ -21,7 +21,8 @@ def run_cart(individual: Individual, config: dict) -> [int]:
             observation, reward, done, info = env.step(action)
             observation = format_observation(observation)
             fitnesses = np.append(fitnesses,
-                                  calculate_time_step_fitness(observation, t, fitness_function=config['fitness_function']))
+                                  calculate_time_step_fitness(observation, t,
+                                                              fitness_function=config['fitness_function']))
             if done:
                 individual.add_fitness_score(np.sum(fitnesses))
                 break

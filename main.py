@@ -11,16 +11,16 @@ results = {
 }
 
 config = {
-    'population_limit': 10,
+    'population_limit': 300,
     'n_generations': 150,
     'render_cart': False,
-    'render_ca': True,
+    'render_ca': False,
     'fitness_function': 'total_time_steps',
-    'selection_criterion': 'fitness_proportional',
-    'mutation_rate': 0.05,
-    'survival_rate': 0.2,
+    'selection_criterion': 'test',
+    'mutation_rate': 0.3,
+    'survival_rate': 0.3,
     'episodes_per_individual': 1,
-    'cart_max_steps': 100
+    'cart_max_steps': 800
 }
 
 

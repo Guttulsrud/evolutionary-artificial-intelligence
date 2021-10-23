@@ -5,12 +5,12 @@ import numpy as np
 def get_config_dict() -> dict:
     return {
         'time_steps': {
-            'max': 50,
+            'max': 40,
             'min': 30,
         },
         'kernel_size': [3, 5],
         'width': {
-            'max': 50,
+            'max': 80,
             'min': 30,
         },
 
@@ -31,14 +31,25 @@ def get_config_dict() -> dict:
 
 def get_criterion_function(criterion_name: str):
     criterion_functions = {
-        'fitness_proportional': fitness_proportional_selection
+        'fitness_proportional': fitness_proportional_selection,
+        'test': test
     }
 
     return criterion_functions[criterion_name]
 
 
-def fitness_proportional_selection(population: list, survival_rate: float = 0.2):
+def fitness_proportional_selection(population: list, survival_rate: float):
     logged_list = softmax([np.log(individual.get_fitness_score()) for individual in population])
     size = int(survival_rate * len(population))
     survivors = np.random.choice(population, size=size, replace=False, p=logged_list)
+    return survivors
+
+
+def test(population: list, survival_rate: float):
+
+    # print(len(population))
+    size = int(survival_rate * len(population))
+
+    survivors = population[:size]
+    # print(len(survivors))
     return survivors

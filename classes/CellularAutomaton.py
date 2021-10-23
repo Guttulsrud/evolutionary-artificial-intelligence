@@ -33,16 +33,16 @@ class CellularAutomaton:
 
         vector = np.random.choice(['0', '1'], size=(self.genotype['width'],))
 
-        for threshold in self.genotype['pole']['angle']:
+        for threshold in self.genotype['pole_angle']:
             vector[threshold['index']] = determine_threshold(threshold, pole_angle)
 
-        for threshold in self.genotype['pole']['velocity']:
+        for threshold in self.genotype['pole_velocity']:
             vector[threshold['index']] = determine_threshold(threshold, pole_angular_velocity)
 
-        for threshold in self.genotype['cart']['position']:
+        for threshold in self.genotype['cart_position']:
             vector[threshold['index']] = determine_threshold(threshold, cart_position)
 
-        for threshold in self.genotype['cart']['velocity']:
+        for threshold in self.genotype['cart_velocity']:
             vector[threshold['index']] = determine_threshold(threshold, cart_velocity)
 
         return vector

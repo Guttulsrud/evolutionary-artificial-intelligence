@@ -17,7 +17,7 @@ class Individual:
         self.score_history.append(score)
 
     def get_fitness_score(self):
-        return np.mean(self.score_history)
+        return np.mean(self.score_history) if self.score_history else 1
 
     def get_phenotype(self):
         return self.phenotype
