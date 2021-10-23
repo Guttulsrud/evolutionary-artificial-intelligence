@@ -1,5 +1,6 @@
 from classes.Population import Population
 from utils.general_utils import save_to_file
+from utils.plot import render
 
 results = {
     'best': {
@@ -21,6 +22,8 @@ config = {
     'episodes_per_individual': 1,
     'cart_max_steps': 100
 }
+
+
 # fitness_function options:
 # total_time_steps, position_based, angle_based, time_based, angle_and_time_based
 
@@ -31,16 +34,19 @@ def main():
         population.run_generation()
 
         # todo: Make me into a function
-        individuals = population.get_individuals()
-        best_rule_number = individuals[0].get_genotype()["rule_number"]
-        best_gen_score = individuals[0].get_fitness_score()
-        print(f'Gen: {generation + 1}. Rule: {best_rule_number}. Score: {best_gen_score}.')
-        # print([str(x) for x in individuals])
+        best_individual = population.get_best_individual()
 
-        if best_gen_score > results['best']['score']:
-            results['best']['score'] = best_gen_score
+        print(f'Gen: {generation + 1}. '
+              f'Rule: {best_individual.get_genotype()["rule_number"]}. '
+              f'Score: {best_individual.get_fitness_score()}.')
+
+        if config['render_ca']:
+            render(best_individual.get_phenotype().get_history())
+
+        if best_individual.get_fitness_score() > results['best']['score']:
+            results['best']['score'] = best_individual.get_fitness_score()
             results['best']['generation'] = generation + 1
-            results['best']['genotype'] = individuals[0].get_genotype()
+            results['best']['genotype'] = best_individual.get_genotype()
 
     save_to_file(results)
 

@@ -5,20 +5,22 @@ from utils.plot import render
 
 class CellularAutomaton:
     def __init__(self, genotype: dict, config):
+        self.history = []
         self.genotype = genotype
         self.rule_map = self.make_rule_map()
         self.config = config
 
+    def get_history(self):
+        return self.history
+
     def run(self, observation: dict) -> int:
         step_range = self.genotype['time_steps']
         ca = self.create(observation=observation)
-        history = [ca]
+        self.history = [ca]
 
         for _ in range(step_range):
             ca = self.step(vector=ca)
-            history.append(ca)
-        if self.config['render_ca']:
-            render(history)
+            self.history.append(ca)
 
         action = int(ca[self.genotype['action_index']])
         return action
@@ -89,4 +91,3 @@ class CellularAutomaton:
 def determine_threshold(threshold_object, value):
     threshold_value = threshold_object['value']
     return '1' if value > threshold_value else '0'
-

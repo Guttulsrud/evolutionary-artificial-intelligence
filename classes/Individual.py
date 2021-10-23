@@ -19,6 +19,9 @@ class Individual:
     def get_fitness_score(self):
         return np.mean(self.score_history)
 
+    def get_phenotype(self):
+        return self.phenotype
+
     def get_genotype(self):
         return self.genotype
 
