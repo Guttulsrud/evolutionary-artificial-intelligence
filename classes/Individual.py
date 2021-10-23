@@ -27,10 +27,7 @@ class Individual:
         child = Individual(child_genotype, self.config)
         return child
 
-    def __str__(self):
-        return str(self.genotype['rule_number'])
-
-    def mutate_genotype(self) -> dict:
+    def mutate_genotype(self):
         mutated_genotype = self.genotype.copy()
         mutated_genotype['rule_number'] = self.mutate_rule_number()
 

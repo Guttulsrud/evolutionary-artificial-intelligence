@@ -6,7 +6,6 @@ from classes.Individual import Individual
 env = gym.make('CartPole-v0')
 
 
-# TODO: Make me a class
 def run_cart(individual: Individual, config: dict) -> [int]:
 
     for i_episode in range(config['episodes_per_individual']):
