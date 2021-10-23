@@ -3,27 +3,31 @@ import random
 from classes.Individual import Individual
 from classes.cartpole import run_cart
 from utils.general_utils import get_max_rule
-from utils.evolution import get_criterion_function
+from utils.evolution import get_criterion_function, get_config_dict
 from scipy.special import softmax
 import numpy as np
 
 
 class Population:
-    def __init__(self, population_limit):
-        self.population_limit = population_limit
+    def __init__(self, config):
         self.individuals = []
+        self.config = config
         self.create()
 
     def create(self):
-        for x in range(self.population_limit):
-            kernel_size = 3
-            width = random.randrange(50, 70)
-            time_steps = 20
+        template = get_config_dict()
+
+        for x in range(self.config['population_limit']):
+            kernel_size = random.choice(template['kernel_size'])
+            width = random.randrange(template['width']['min'], template['width']['max'])
+            time_steps = random.randrange(template['time_steps']['min'], template['time_steps']['max'])
             rule_number = random.randrange(0, get_max_rule(kernel_size))
             individual = Individual({
                 'time_steps': time_steps,
                 'width': width,
                 'kernel_size': kernel_size,
+                'action_index': random.randrange(0, width),
+                'rule_number': rule_number,
                 'pole':
                     {
                         'angle': [
@@ -96,24 +100,23 @@ class Population:
                         {'value': 0.5, 'gt': False, 'index': random.randrange(0, width)},
                     ]
                 },
-                'action_index': random.randrange(0, width),
-                'rule_number': rule_number
-            })
+
+            }, config=self.config)
 
             self.individuals.append(individual)
 
     def get_individuals(self) -> List[Individual]:
         return self.individuals
 
-    def run_generation(self, render: bool = False):
+    def run_generation(self):
         for individual in self.individuals:
-            run_cart(individual, render)
+            run_cart(individual, self.config)
 
         survivors = self.select_survivors()
 
         # survivors = self.individuals
 
-        n = self.population_limit - len(survivors)
+        n = self.config['population_limit'] - len(survivors)
         soft_maxed_weights = softmax([individual.get_fitness_score() for individual in survivors])
 
         for _ in range(n):
@@ -121,10 +124,10 @@ class Population:
             child = parent.reproduce()
             self.individuals.append(child)
 
-    def select_survivors(self, survival_rate=0.2, criterion='fitness_proportional'):
+    def select_survivors(self):
 
         self.individuals = sorted(self.individuals, key=lambda i: i.get_fitness_score(), reverse=True)
-        criterion_function = get_criterion_function(criterion)
-        survivors = list(criterion_function(self.individuals, survival_rate))
+        criterion_function = get_criterion_function(self.config['selection_criterion'])
+        survivors = list(criterion_function(self.individuals, self.config['survival_rate']))
 
         return survivors

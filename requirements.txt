@@ -2,3 +2,4 @@ gym
 pyglet
 numpy
 scipy
+matplotlib

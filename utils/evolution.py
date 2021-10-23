@@ -4,19 +4,16 @@ import numpy as np
 
 def get_config_dict() -> dict:
     return {
-        'independent_properties': {
-            'time_steps': {
-                'max': 10,
-                'min': 10,
-            },
-            'kernel_size': {
-                'values': [3],
-            },
-            'width': {
-                'max': 50,
-                'min': 10,
-            },
+        'time_steps': {
+            'max': 50,
+            'min': 10,
         },
+        'kernel_size': [3, 5],
+        'width': {
+            'max': 50,
+            'min': 10,
+        },
+
         'dependent_properties': {
             'inputs': [{
                 'name': 'angle_index'
@@ -25,7 +22,6 @@ def get_config_dict() -> dict:
                 'name': 'action_index'
             }, ],
             'rule_number': {
-                'max': None,
                 'min': 0,
             },
         }

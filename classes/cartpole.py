@@ -5,16 +5,15 @@ from classes.Individual import Individual
 
 env = gym.make('CartPole-v0')
 
+
 # TODO: Make me a class
 def run_cart(individual: Individual, config: dict) -> [int]:
-    episodes = 3
-    time_steps = 100
 
-    for i_episode in range(episodes):
+    for i_episode in range(config['episodes_per_individual']):
         observation = format_observation(env.reset())
 
         fitnesses = np.array([])
-        for t in range(time_steps):
+        for t in range(config['cart_max_steps']):
             if config['render_cart']:
                 env.render()
 
@@ -23,9 +22,8 @@ def run_cart(individual: Individual, config: dict) -> [int]:
             observation, reward, done, info = env.step(action)
             observation = format_observation(observation)
             fitnesses = np.append(fitnesses,
-                                  calculate_time_step_fitness(observation, t, fitness_function='angle_based'))
+                                  calculate_time_step_fitness(observation, t, fitness_function=config['fitness_function']))
             if done:
-                print(fitnesses)
                 individual.add_fitness_score(np.sum(fitnesses))
                 break
 

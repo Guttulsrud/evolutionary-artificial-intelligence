@@ -4,11 +4,12 @@ from utils.plot import render
 
 
 class CellularAutomaton:
-    def __init__(self, genotype: dict):
+    def __init__(self, genotype: dict, config):
         self.genotype = genotype
         self.rule_map = self.make_rule_map()
+        self.config = config
 
-    def run(self, observation: dict, render_ca: bool = False) -> int:
+    def run(self, observation: dict) -> int:
         step_range = self.genotype['time_steps']
         ca = self.create(observation=observation)
         history = [ca]
@@ -16,7 +17,7 @@ class CellularAutomaton:
         for _ in range(step_range):
             ca = self.step(vector=ca)
             history.append(ca)
-        if render_ca:
+        if self.config['render_ca']:
             render(history)
 
         action = int(ca[self.genotype['action_index']])
