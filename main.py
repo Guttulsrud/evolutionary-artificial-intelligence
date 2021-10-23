@@ -13,7 +13,7 @@ config = {
     'population_limit': 10,
     'n_generations': 150,
     'render_cart': False,
-    'render_ca': False,
+    'render_ca': True,
     'fitness_function': 'total_time_steps',
     'selection_criterion': 'fitness_proportional',
     'mutation_rate': 0.05,

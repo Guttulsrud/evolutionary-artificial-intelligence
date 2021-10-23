@@ -6,12 +6,12 @@ def get_config_dict() -> dict:
     return {
         'time_steps': {
             'max': 50,
-            'min': 10,
+            'min': 30,
         },
         'kernel_size': [3, 5],
         'width': {
             'max': 50,
-            'min': 10,
+            'min': 30,
         },
 
         'dependent_properties': {
