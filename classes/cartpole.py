@@ -4,7 +4,8 @@ import numpy as np
 from classes.Individual import Individual
 
 env = gym.make('CartPole-v0')
-env._max_episode_steps = 500
+max_steps = 100_000
+env._max_episode_steps = max_steps
 
 
 def run_cart(individual: Individual, config: dict) -> [int]:
@@ -12,9 +13,9 @@ def run_cart(individual: Individual, config: dict) -> [int]:
         observation = format_observation(env.reset())
 
         fitnesses = np.array([])
-        for t in range(config['cart_max_steps']):
-            if config['render_cart']:
-                env.render()
+        for t in range(max_steps):
+            # if config['render_cart']:
+            #    env.render()
 
             action = individual.run(observation=observation)
 
@@ -23,18 +24,20 @@ def run_cart(individual: Individual, config: dict) -> [int]:
             fitnesses = np.append(fitnesses,
                                   calculate_time_step_fitness(observation, t,
                                                               fitness_function=config['fitness_function']))
-            if done:
-                individual.add_fitness_score(np.sum(fitnesses))
+            if done or abs(observation['cart_position']) > 4:
+                individual.add_fitness_score(np.sum(fitnesses), t)
                 break
 
 
 def calculate_time_step_fitness(observation, total_time_steps, fitness_function='total_time_steps'):
     fitness_function_map = {
         'total_time_steps': 1,
-        'position_based': np.log(1 / abs(observation['pole_angle']) + 1),
-        'angle_based': np.log(1 / abs(observation['cart_position']) + 1),
+        'position_based': np.log(1 / abs(observation['cart_position']) + 1),
+        'angle_based': np.log(1 / abs(observation['pole_angle']) + 1),
         'time_based': np.log(total_time_steps + 1),
-        'angle_and_time_based': total_time_steps + np.log(1 / abs(observation['pole_angle']) + 1)
+        'angle_and_time_based': total_time_steps + np.log(1 / abs(observation['pole_angle']) + 1),
+        'position_and_angle_based': np.log(1 / abs(observation['cart_position']) + 1) +
+                                    np.log(1 / abs(observation['pole_angle']) + 1)
     }
     return fitness_function_map[fitness_function]
 

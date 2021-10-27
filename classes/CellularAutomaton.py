@@ -4,7 +4,7 @@ from utils.plot import render
 
 
 class CellularAutomaton:
-    def __init__(self, genotype: dict, config):
+    def __init__(self, genotype: dict, config: dict):
         self.history = []
         self.genotype = genotype
         self.rule_map = self.make_rule_map()
@@ -22,7 +22,13 @@ class CellularAutomaton:
             ca = self.step(vector=ca)
             self.history.append(ca)
 
-        action = int(ca[self.genotype['action_index']])
+        if self.config['action_type'] == 'mean':
+            mean = np.mean([int(x) for x in ca])
+
+            action = 1 if mean > 0.5 else 0
+        else:
+            action = int(ca[self.genotype['action_index']])
+
         return action
 
     def create(self, observation: dict) -> dict:
