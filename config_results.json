@@ -1,0 +1,1924 @@
+{
+    "configs": [
+        {
+            "population_limit": 300,
+            "n_generations": 2,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "position_and_angle_based",
+            "selection_criterion": "fitness_proportional",
+            "mutation_rate": 0.001,
+            "survival_rate": 0.1,
+            "episodes_per_individual": 2,
+            "action_type": "mean",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 65.5,
+                "Rule": 210,
+                "Time step history": [
+                    47.5,
+                    65.5
+                ]
+            }
+        },
+        {
+            "population_limit": 300,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "angle_based",
+            "selection_criterion": "tournament",
+            "mutation_rate": 0.001,
+            "survival_rate": 0.2,
+            "episodes_per_individual": 2,
+            "action_type": "mean",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 108.5,
+                "Rule": 178,
+                "Time step history": [
+                    79.0,
+                    108.5,
+                    87.25,
+                    99.0,
+                    107.5
+                ]
+            }
+        },
+        {
+            "population_limit": 100,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "position_and_angle_based",
+            "selection_criterion": "fitness_proportional",
+            "mutation_rate": 0.003,
+            "survival_rate": 0.2,
+            "episodes_per_individual": 2,
+            "action_type": "index",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 5,
+                "Time steps": 412.0,
+                "Rule": 202,
+                "Time step history": [
+                    123.5,
+                    213.5,
+                    207.75,
+                    143.66666666666666,
+                    412.0
+                ]
+            }
+        },
+        {
+            "random_search": true,
+            "population_limit": 300,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "total_time_steps",
+            "selection_criterion": "tournament",
+            "mutation_rate": 0.01,
+            "survival_rate": 0.1,
+            "episodes_per_individual": 2,
+            "action_type": "mean",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 4,
+                "Time steps": 339.0,
+                "Rule": 210,
+                "Time step history": [
+                    39.0,
+                    125.5,
+                    216.5,
+                    339.0,
+                    213.25
+                ]
+            }
+        },
+        {
+            "random_search": true,
+            "population_limit": 1000,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "angle_based",
+            "selection_criterion": "elitist",
+            "mutation_rate": 0.01,
+            "survival_rate": 0.2,
+            "episodes_per_individual": 2,
+            "action_type": "mean",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 5,
+                "Time steps": 220.0,
+                "Rule": 103,
+                "Time step history": [
+                    80.0,
+                    82.5,
+                    100.0,
+                    192.0,
+                    220.0
+                ]
+            }
+        },
+        {
+            "random_search": true,
+            "population_limit": 300,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "angle_and_time_based",
+            "selection_criterion": "elitist",
+            "mutation_rate": 0.0001,
+            "survival_rate": 0.2,
+            "episodes_per_individual": 2,
+            "action_type": "mean",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 3,
+                "Time steps": 557.0,
+                "Rule": 154,
+                "Time step history": [
+                    181.5,
+                    219.0,
+                    557.0,
+                    297.75,
+                    526.5
+                ]
+            }
+        },
+        {
+            "random_search": true,
+            "population_limit": 300,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "position_and_angle_based",
+            "selection_criterion": "tournament",
+            "mutation_rate": 1e-05,
+            "survival_rate": 0.1,
+            "episodes_per_individual": 5,
+            "action_type": "mean",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 3,
+                "Time steps": 103.2,
+                "Rule": 142,
+                "Time step history": [
+                    51.8,
+                    101.0,
+                    103.2,
+                    97.2,
+                    55.4
+                ]
+            }
+        },
+        {
+            "random_search": true,
+            "population_limit": 300,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "angle_and_time_based",
+            "selection_criterion": "tournament",
+            "mutation_rate": 0.0001,
+            "survival_rate": 0.2,
+            "episodes_per_individual": 5,
+            "action_type": "mean",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 5,
+                "Time steps": 210.4,
+                "Rule": 67,
+                "Time step history": [
+                    40.2,
+                    63.2,
+                    122.0,
+                    173.8,
+                    210.4
+                ]
+            }
+        },
+        {
+            "random_search": true,
+            "population_limit": 300,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "position_based",
+            "selection_criterion": "fitness_proportional",
+            "mutation_rate": 1e-05,
+            "survival_rate": 0.1,
+            "episodes_per_individual": 5,
+            "action_type": "mean",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 5,
+                "Time steps": 175.13333333333333,
+                "Rule": 210,
+                "Time step history": [
+                    69.2,
+                    71.2,
+                    151.0,
+                    146.6,
+                    175.13333333333333
+                ]
+            }
+        },
+        {
+            "random_search": true,
+            "population_limit": 300,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "position_and_angle_based",
+            "selection_criterion": "elitist",
+            "mutation_rate": 0.0001,
+            "survival_rate": 0.1,
+            "episodes_per_individual": 2,
+            "action_type": "mean",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 4,
+                "Time steps": 123.0,
+                "Rule": 118,
+                "Time step history": [
+                    102.5,
+                    55.0,
+                    68.5,
+                    123.0,
+                    53.5
+                ]
+            }
+        },
+        {
+            "random_search": true,
+            "population_limit": 300,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "time_based",
+            "selection_criterion": "tournament",
+            "mutation_rate": 0.01,
+            "survival_rate": 0.2,
+            "episodes_per_individual": 5,
+            "action_type": "index",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 5,
+                "Time steps": 408.2,
+                "Rule": 236,
+                "Time step history": [
+                    228.2,
+                    200.6,
+                    286.8,
+                    216.1,
+                    408.2
+                ]
+            }
+        },
+        {
+            "random_search": true,
+            "population_limit": 300,
+            "n_generations": 5,
+            "render_cart": false,
+            "render_ca": false,
+            "fitness_function": "position_based",
+            "selection_criterion": "tournament",
+            "mutation_rate": 1e-05,
+            "survival_rate": 0.1,
+            "episodes_per_individual": 2,
+            "action_type": "index",
+            "ca": {
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "stats": {
+                "Best generation": 5,
+                "Time steps": 332.0,
+                "Rule": 172,
+                "Time step history": [
+                    253.0,
+                    72.5,
+                    211.0,
+                    171.0,
+                    332.0
+                ]
+            }
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 5,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 5,
+                "Time steps": 238.9,
+                "Rule": 82,
+                "Time step history": [
+                    74.4,
+                    88.6,
+                    188.2,
+                    186.6,
+                    238.9
+                ]
+            },
+            "mutation_rate": 1e-05,
+            "selection_criterion": "fitness_proportional",
+            "fitness_function": "total_time_steps",
+            "survival_rate": 0.1,
+            "action_type": "mean",
+            "population_limit": 1000,
+            "episodes_per_individual": 5,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 5,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 5,
+                "Time steps": 525.0,
+                "Rule": 166,
+                "Time step history": [
+                    157.0,
+                    245.5,
+                    122.25,
+                    384.5,
+                    525.0
+                ]
+            },
+            "mutation_rate": 0.001,
+            "selection_criterion": "fitness_proportional",
+            "fitness_function": "total_time_steps",
+            "survival_rate": 0.2,
+            "action_type": "mean",
+            "population_limit": 1000,
+            "episodes_per_individual": 2,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": false,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "render_cart": false,
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 199.5,
+                "Rule": 240,
+                "Time step history": [
+                    119.0,
+                    199.5
+                ]
+            }
+        },
+        {
+            "general": {
+                "random_search": false,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "render_cart": false,
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 848.5,
+                "Rule": 232,
+                "Time step history": [
+                    84.0,
+                    848.5
+                ]
+            }
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 245.0,
+                "Rule": 138,
+                "Time step history": [
+                    193.0,
+                    245.0
+                ]
+            },
+            "mutation_rate": 0.0001,
+            "selection_criterion": "elitist",
+            "fitness_function": "total_time_steps",
+            "survival_rate": 0.1,
+            "action_type": "mean",
+            "population_limit": 1000,
+            "episodes_per_individual": 5,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 205.0,
+                "Rule": 208,
+                "Time step history": [
+                    43.5,
+                    205.0
+                ]
+            },
+            "mutation_rate": 0.0001,
+            "selection_criterion": "tournament",
+            "fitness_function": "total_time_steps",
+            "survival_rate": 0.2,
+            "action_type": "mean",
+            "population_limit": 1000,
+            "episodes_per_individual": 2,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 1,
+                "Time steps": 260.0,
+                "Rule": 129,
+                "Time step history": [
+                    260.0,
+                    147.0
+                ]
+            },
+            "mutation_rate": 0.01,
+            "selection_criterion": "elitist",
+            "fitness_function": "position_and_angle_based",
+            "survival_rate": 0.1,
+            "action_type": "mean",
+            "population_limit": 1000,
+            "episodes_per_individual": 2,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 1,
+                "Time steps": 50.5,
+                "Rule": 101,
+                "Time step history": [
+                    50.5,
+                    27.0
+                ]
+            },
+            "mutation_rate": 0.001,
+            "selection_criterion": "fitness_proportional",
+            "fitness_function": "angle_and_time_based",
+            "survival_rate": 0.1,
+            "action_type": "mean",
+            "population_limit": 1000,
+            "episodes_per_individual": 2,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 146.0,
+                "Rule": 195,
+                "Time step history": [
+                    65.5,
+                    146.0
+                ]
+            },
+            "mutation_rate": 1e-05,
+            "selection_criterion": "elitist",
+            "fitness_function": "angle_and_time_based",
+            "survival_rate": 0.2,
+            "action_type": "mean",
+            "population_limit": 300,
+            "episodes_per_individual": 5,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 5776.5,
+                "Rule": 178,
+                "Time step history": [
+                    123.5,
+                    5776.5
+                ]
+            },
+            "mutation_rate": 0.0001,
+            "selection_criterion": "fitness_proportional",
+            "fitness_function": "angle_and_time_based",
+            "survival_rate": 0.1,
+            "action_type": "mean",
+            "population_limit": 1000,
+            "episodes_per_individual": 2,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 144.5,
+                "Rule": 77,
+                "Time step history": [
+                    90.0,
+                    144.5
+                ]
+            },
+            "mutation_rate": 0.0001,
+            "selection_criterion": "fitness_proportional",
+            "fitness_function": "total_time_steps",
+            "survival_rate": 0.2,
+            "action_type": "index",
+            "population_limit": 1000,
+            "episodes_per_individual": 5,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 203.5,
+                "Rule": 212,
+                "Time step history": [
+                    106.0,
+                    203.5
+                ]
+            },
+            "mutation_rate": 0.0001,
+            "selection_criterion": "fitness_proportional",
+            "fitness_function": "total_time_steps",
+            "survival_rate": 0.2,
+            "action_type": "index",
+            "population_limit": 300,
+            "episodes_per_individual": 2,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 330.0,
+                "Rule": 202,
+                "Time step history": [
+                    248.0,
+                    330.0
+                ]
+            },
+            "mutation_rate": 0.0001,
+            "selection_criterion": "fitness_proportional",
+            "fitness_function": "total_time_steps",
+            "survival_rate": 0.2,
+            "action_type": "mean",
+            "population_limit": 1000,
+            "episodes_per_individual": 2,
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 2,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.003,
+                "survival_rate": 0.2
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 1,
+                "Time steps": 164.5,
+                "Rule": 231,
+                "Time step history": [
+                    164.5,
+                    125.25
+                ]
+            },
+            "mutation_rate": 0.001,
+            "selection_criterion": "elitist",
+            "fitness_function": "angle_and_time_based",
+            "survival_rate": 0.2,
+            "action_type": "mean",
+            "population_limit": 300,
+            "episodes_per_individual": 2,
+            "render_cart": false
+        }
+    ]
+}

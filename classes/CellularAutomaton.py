@@ -22,7 +22,7 @@ class CellularAutomaton:
             ca = self.step(vector=ca)
             self.history.append(ca)
 
-        if self.config['action_type'] == 'mean':
+        if self.config['ca']['action_type'] == 'mean':
             mean = np.mean([int(x) for x in ca])
 
             action = 1 if mean > 0.5 else 0

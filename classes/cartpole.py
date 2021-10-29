@@ -9,13 +9,13 @@ env._max_episode_steps = max_steps
 
 
 def run_cart(individual: Individual, config: dict) -> [int]:
-    for i_episode in range(config['episodes_per_individual']):
+    for i_episode in range(config['evolution']['episodes_per_individual']):
         observation = format_observation(env.reset())
 
         fitnesses = np.array([])
         for t in range(max_steps):
-            # if config['render_cart']:
-            #    env.render()
+            if config['general']['render_cart']:
+                env.render()
 
             action = individual.run(observation=observation)
 
@@ -23,7 +23,7 @@ def run_cart(individual: Individual, config: dict) -> [int]:
             observation = format_observation(observation)
             fitnesses = np.append(fitnesses,
                                   calculate_time_step_fitness(observation, t,
-                                                              fitness_function=config['fitness_function']))
+                                                              fitness_function=config['evolution']['fitness_function']))
             if done or abs(observation['cart_position']) > 4:
                 individual.add_fitness_score(np.sum(fitnesses), t)
                 break

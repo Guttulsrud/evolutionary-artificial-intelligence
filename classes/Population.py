@@ -9,13 +9,13 @@ import numpy as np
 
 
 class Population:
-    def __init__(self, config):
+    def __init__(self, config: dict):
         self.individuals = []
         self.config = config
         self.create()
 
     def create(self):
-        population_limit = self.config['population_limit']
+        population_limit = self.config['evolution']['population_limit']
 
         for x in range(population_limit):
             genotype = self.create_genotype()
@@ -23,7 +23,7 @@ class Population:
 
             self.individuals.append(individual)
 
-    def create_genotype(self):
+    def create_genotype(self) -> dict:
         config = self.config['ca']
 
         width = random.randrange(config['width']['min'], config['width']['max'])
@@ -71,7 +71,7 @@ class Population:
 
         survivors = self.select_survivors(self.individuals)
 
-        n = self.config['population_limit'] - len(survivors)
+        n = self.config['evolution']['population_limit'] - len(survivors)
 
         logged_list = softmax([np.log(individual.get_fitness_score()) for individual in self.individuals])
 
@@ -86,7 +86,7 @@ class Population:
     def select_survivors(self, individuals: List[Individual]) -> List[Individual]:
 
         individuals = sorted(individuals, key=lambda i: i.get_fitness_score(), reverse=True)
-        criterion_function = get_criterion_function(self.config['selection_criterion'])
-        survivors = list(criterion_function(individuals, self.config['survival_rate']))
+        criterion_function = get_criterion_function(self.config['evolution']['selection_criterion'])
+        survivors = list(criterion_function(individuals, self.config['evolution']['survival_rate']))
 
         return survivors
