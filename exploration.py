@@ -2,19 +2,28 @@ import json
 import plotly.express as px
 import pandas as pd
 
-f = open('res.json', )
+f = open('config_results.json', )
 data = json.load(f)
 
 output = {}
-
+configs = []
 for x in data['configs']:
+    configs.append({
+        'population_limit': x['evolution']['population_limit'],
+        'fitness_function': x['evolution']['fitness_function'],
+        'selection_criterion': x['evolution']['selection_criterion'],
+        'episodes_per_individual': x['evolution']['episodes_per_individual'],
+        'mutation_rate': x['evolution']['mutation_rate'],
+        'survival_rate': x['evolution']['survival_rate'],
+        'steps': x['stats']['Time steps'],
+        'rule': x['stats']['Rule'],
+        'step_history': x['stats']['Time step history']
+    })
 
-    if x['config']['selection_criterion'] == 'fitness_proportional':
-        output[x['config']['mutation_rate']] = x['config']['stats']['time_steps_history']
 
-df = pd.DataFrame(output).reset_index()
-df.columns = ['generation', '0.2percent', '3percent', '5percent']
-print(df)
+df = pd.DataFrame(configs)
 
-fig = px.line(df, x="generation", y="0.2percent", title='Nje')
-fig.show()
+print(df.columns)
+
+#fig = px.line(df, x="generation", y="0.2percent", title='Nje')
+#fig.show()

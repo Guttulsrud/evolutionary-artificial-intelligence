@@ -5,13 +5,13 @@
     "render_ca": false
   },
   "evolution": {
-    "population_limit": 100,
-    "n_generations": 2,
+    "population_limit": 300,
+    "n_generations": 50,
     "fitness_function": "position_and_angle_based",
-    "selection_criterion": "fitness_proportional",
+    "selection_criterion": "tournament",
     "episodes_per_individual": 2,
-    "mutation_rate": 0.003,
-    "survival_rate": 0.2
+    "mutation_rate": 0.001,
+    "survival_rate": 0.1
   },
   "ca": {
     "action_type": "index",
