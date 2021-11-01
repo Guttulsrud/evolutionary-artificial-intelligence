@@ -1,0 +1,126 @@
+{
+    "config": {
+        "general": {
+            "random_search": true,
+            "render_cart": false,
+            "render_ca": false,
+            "phenotype": "nn"
+        },
+        "evolution": {
+            "population_limit": 300,
+            "n_generations": 50,
+            "fitness_function": "position_and_angle_based",
+            "reproduction_criterion": "fitness_proportional",
+            "selection_criterion": "tournament",
+            "episodes_per_individual": 2,
+            "mutation_rate": 0.001,
+            "survival_rate": 0.1
+        },
+        "ca": {
+            "action_type": "index",
+            "time_steps": {
+                "min": 5,
+                "max": 6
+            },
+            "width": {
+                "min": 5,
+                "max": 6
+            },
+            "kernel_size": [
+                3
+            ],
+            "pole_angle": {
+                "min": -3,
+                "max": 3
+            },
+            "pole_velocity": {
+                "min": -3,
+                "max": 3
+            },
+            "cart_position": {
+                "min": -3,
+                "max": 3
+            },
+            "cart_velocity": {
+                "min": -3,
+                "max": 3
+            },
+            "dependent_properties": {
+                "inputs": [
+                    {
+                        "name": "angle_index"
+                    }
+                ],
+                "output": [
+                    {
+                        "name": "action_index"
+                    }
+                ],
+                "rule_number": {
+                    "min": 0
+                }
+            }
+        },
+        "nn": {
+            "hidden_layers": [],
+            "step_size": 0.1
+        },
+        "stats": {},
+        "reproduction_criterion": "fitness_proportional",
+        "render_cart": false
+    },
+    "generations": [
+        {
+            "Generation": 1,
+            "Time steps survived": 14999.0,
+            "Best individual": {
+                "hidden_layers": [
+                    4,
+                    4
+                ],
+                "weights": [
+                    0.029846670092809613,
+                    0.6912904784123843,
+                    0.6730023665333615,
+                    0.22326403705725262,
+                    0.2911713083817542,
+                    0.13241055731857065,
+                    0.9590980674601464,
+                    0.11959109729958695,
+                    0.9263307099987158,
+                    0.7315476678908839,
+                    0.6415461836508601,
+                    0.7421185278567782,
+                    0.9334225130993359,
+                    0.44961923590881037,
+                    0.7986161741308504,
+                    0.0101821623221664,
+                    0.12435321483043948,
+                    0.8006318253971217,
+                    0.4527381409360465,
+                    0.5795745445292632,
+                    0.3495505431288862,
+                    0.05934813780911763,
+                    0.4351993120953662,
+                    0.5165310686686548,
+                    0.5889275286595316,
+                    0.30833131131211056,
+                    0.7800501972465286,
+                    0.3288333635613385,
+                    0.2513779293447229,
+                    0.0488686881084095,
+                    0.8310744912364526,
+                    0.6553815905135766,
+                    0.6333349684137219,
+                    0.7655640326753027,
+                    0.04519858482415129,
+                    0.14649631625933734,
+                    0.08980215027006999,
+                    0.09425905731173367,
+                    0.535850360732698,
+                    0.45693971591176474
+                ]
+            }
+        }
+    ]
+}

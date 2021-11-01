@@ -1,5 +1,4 @@
-from typing import List
-
+from classes.NeuralNetwork import NeuralNetwork
 from classes.CellularAutomaton import CellularAutomaton
 import numpy as np
 import random
@@ -8,7 +7,10 @@ import random
 class Individual:
     def __init__(self, genotype, config):
         self.genotype = genotype
-        self.phenotype = CellularAutomaton(genotype=self.genotype, config=config)
+        if config['general']['phenotype'] == 'nn':
+            self.phenotype = NeuralNetwork(genotype=self.genotype, config=config)
+        else:
+            self.phenotype = CellularAutomaton(genotype=self.genotype, config=config)
         self.score_history = []
         self.time_step_survived = []
         self.config = config
@@ -26,10 +28,12 @@ class Individual:
     def get_time_steps_survived(self) -> np.ndarray:
         return np.mean(self.time_step_survived)
 
-    def get_phenotype(self) -> CellularAutomaton:
+    def get_phenotype(self) -> CellularAutomaton or NeuralNetwork:
         return self.phenotype
 
     def get_genotype(self) -> dict:
+        if self.config['general']['phenotype'] == 'nn':
+            self.genotype['weights'] = list(self.genotype['weights'])
         return self.genotype
 
     def reproduce(self, other_parent):
@@ -40,12 +44,16 @@ class Individual:
 
     def mutate_genotype(self, other_parent) -> dict:
         mutated_genotype = self.genotype.copy()
-        mutated_genotype['rule_number'] = self.mutate_rule_number(other_parent)
 
-        self.mutate_gene('pole_angle')
-        self.mutate_gene('pole_velocity')
-        self.mutate_gene('cart_position')
-        self.mutate_gene('cart_velocity')
+        if self.config['general']['phenotype'] == 'nn':
+            mutated_genotype['weights'] = self.phenotype.mutate()
+        else:
+            mutated_genotype['rule_number'] = self.mutate_rule_number(other_parent)
+
+            self.mutate_gene('pole_angle')
+            self.mutate_gene('pole_velocity')
+            self.mutate_gene('cart_position')
+            self.mutate_gene('cart_velocity')
 
         return mutated_genotype
 
