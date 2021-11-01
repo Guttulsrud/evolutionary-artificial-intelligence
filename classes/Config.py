@@ -52,7 +52,7 @@ class Config:
             'Rule': self.stats['rule'],
             'Time step history': self.time_step_history
         }
-        with open('fitness_function_only.json', 'r+') as file:
+        with open('repro_city.json', 'r+') as file:
             file_data = json.load(file)
             file_data['configs'].append(self.options)
             file.seek(0)

@@ -5,8 +5,8 @@
     "render_ca": false
   },
   "evolution": {
-    "population_limit": 300,
-    "n_generations": 30,
+    "population_limit": 20,
+    "n_generations": 3,
     "fitness_function": "position_and_angle_based",
     "reproduction_criterion": "fitness_proportional",
     "selection_criterion": "tournament",
