@@ -1,46 +1,67 @@
 import numpy as np
+from itertools import islice
+import random
 
 
 class NeuralNetwork:
     def __init__(self, genotype: dict, config: dict):
-        # self.shapes = [np.random.rand(4, genotype['layers'][0])]
-
-        self.shapes = [(4, genotype['layers'][0])]
-        weights_count = self.shapes[0][0]*self.shapes[0][1]
-        for count, layer_node_count in enumerate(genotype['layers'][1:]):
-            weights_count += genotype['layers'][count] * layer_node_count
-            self.shapes.append((genotype['layers'][count], layer_node_count))
-
-        weights = np.random.random(weights_count)
-
-        network = np.reshape(weights, self.shapes)
-        print(network)
-        print(self.shapes)
-        print(weights)
         self.genotype = genotype
         self.config = config
+        self.nodes_per_layer = []
+        self.layer_shapes = []
+        self.layer_weight_count = []
+        self.network = []
+
+        self.build_network()
+
+    def build_network(self):
+        self.nodes_per_layer = [4, *genotype['layers'], 2]
+
+        for count, layer_node_count in enumerate(self.nodes_per_layer[1:]):
+            self.layer_weight_count.append(self.nodes_per_layer[count] * layer_node_count)
+            self.layer_shapes.append((self.nodes_per_layer[count], layer_node_count))
+
+        if not self.genotype.get('weights'):
+            total_weights = sum(self.layer_weight_count)
+            self.genotype['weights'] = np.random.random(total_weights)
+
+
+        weights_iter = iter(genotype['weights'])
+        network = [list(islice(weights_iter, elem)) for elem in self.layer_weight_count]
+        self.network = [np.reshape(weights, shape) for weights, shape in zip(network, self.layer_shapes)]
 
     def run(self, observation: dict) -> int:
-        input = list(observation.values())
+        layer_input = list(observation.values())
 
-        layer_1_output = self.genotype['activation_function'](np.dot(input, layer_1_weights))
-        layer_2_output = self.genotype['activation_function'](np.dot(layer_1_output, layer_2_weights))
-        output = self.genotype['activation_function'](np.dot(layer_2_output, output_weights))
-
+        for layer in self.network:
+            output = self.genotype['activation_function'](np.dot(layer_input, layer))
+            layer_input = output
         action = output.argmax(axis=0)
         return action
 
     def mutate(self):
-        pass
+        step_size = self.config['step_size']
+        weights = self.genotype['weights']
+        print(weights)
+        for index, weight in enumerate(self.genotype['weights']):
+            will_mutate = random.uniform(0, 1) < self.config['mutation_rate']  # This line is a duplicate
+            if will_mutate:
+                min = weight - step_size
+                max = weight + step_size
+                new_value = random.uniform(min, max)
+                weights[index] = new_value
+
+        return weights
 
 
 if __name__ == '__main__':
     config = {
-        'nn': {}
+        'mutation_rate': 0.1,
+        'step_size': 0.1
     }
 
     genotype = {
-        'layers': [4, 4, 2],
+        'layers': [4, 4],
         'activation_function': lambda n: np.maximum(n, 0),
     }
 
@@ -48,3 +69,4 @@ if __name__ == '__main__':
 
     observation = {1: 1, 2: 1, 3: 1, 4: 1}
     action = nn.run(observation)
+    print(nn.mutate())
