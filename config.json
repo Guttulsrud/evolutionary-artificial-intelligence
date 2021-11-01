@@ -6,8 +6,9 @@
   },
   "evolution": {
     "population_limit": 300,
-    "n_generations": 50,
+    "n_generations": 30,
     "fitness_function": "position_and_angle_based",
+    "reproduction_criterion": "fitness_proportional",
     "selection_criterion": "tournament",
     "episodes_per_individual": 2,
     "mutation_rate": 0.001,

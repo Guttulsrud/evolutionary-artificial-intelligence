@@ -12583,6 +12583,4073 @@
             },
             "fitness_function": "angle_based",
             "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 8,
+                "Time steps": 2308.0,
+                "Rule": 208,
+                "Time step history": [
+                    106.0,
+                    221.5,
+                    316.0,
+                    433.25,
+                    377.75,
+                    478.3333333333333,
+                    1601.5,
+                    2308.0,
+                    1321.0,
+                    589.4,
+                    500.0,
+                    608.5,
+                    483.0,
+                    503.0,
+                    349.5,
+                    342.5,
+                    516.0,
+                    1757.5,
+                    482.5,
+                    240.0,
+                    348.6666666666667,
+                    313.0,
+                    304.5,
+                    264.75,
+                    279.5,
+                    298.5,
+                    361.0,
+                    251.5,
+                    245.5,
+                    252.0,
+                    244.5,
+                    262.5,
+                    272.0,
+                    273.0,
+                    250.5,
+                    296.0,
+                    327.5,
+                    323.0,
+                    285.75,
+                    331.0,
+                    257.0,
+                    279.0,
+                    265.0,
+                    257.0,
+                    276.0,
+                    299.0,
+                    338.0,
+                    142.25,
+                    97.83333333333333,
+                    317.5
+                ]
+            },
+            "fitness_function": "position_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 10,
+                "Time steps": 17420.5,
+                "Rule": 162,
+                "Time step history": [
+                    182.0,
+                    211.0,
+                    543.5,
+                    535.75,
+                    464.0,
+                    548.0,
+                    676.5,
+                    510.0,
+                    5088.0,
+                    17420.5,
+                    2468.0,
+                    1406.0,
+                    1058.375,
+                    848.2,
+                    298.3333333333333,
+                    342.0,
+                    324.0,
+                    331.5,
+                    278.5,
+                    387.5,
+                    199.5,
+                    284.0,
+                    216.5,
+                    301.0,
+                    145.5,
+                    99.66666666666667,
+                    75.0,
+                    65.0,
+                    49.5,
+                    69.5,
+                    68.5,
+                    92.5,
+                    75.75,
+                    94.0,
+                    75.0,
+                    40.5,
+                    66.0,
+                    59.0,
+                    52.0,
+                    47.5,
+                    119.0,
+                    81.75,
+                    91.0,
+                    66.0,
+                    65.0,
+                    61.5,
+                    122.5,
+                    127.5,
+                    81.5,
+                    94.0
+                ]
+            },
+            "fitness_function": "position_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 13,
+                "Time steps": 5197.75,
+                "Rule": 236,
+                "Time step history": [
+                    160.0,
+                    210.5,
+                    411.0,
+                    1359.5,
+                    1540.5,
+                    1629.5,
+                    2446.0,
+                    3354.0,
+                    1561.5,
+                    1112.8333333333333,
+                    3972.5,
+                    5168.5,
+                    5197.75,
+                    3469.1666666666665,
+                    2604.125,
+                    2118.4,
+                    957.4166666666666,
+                    821.8571428571429,
+                    22.5,
+                    207.0,
+                    244.5,
+                    266.0,
+                    255.5,
+                    136.75,
+                    92.33333333333333,
+                    71.125,
+                    9.5,
+                    15.5,
+                    15.0,
+                    51.0,
+                    52.5,
+                    38.0,
+                    40.0,
+                    47.5,
+                    100.5,
+                    82.5,
+                    102.5,
+                    57.0,
+                    85.5,
+                    52.75,
+                    59.5,
+                    65.0,
+                    70.0,
+                    61.0,
+                    51.0,
+                    41.5,
+                    26.0,
+                    19.0,
+                    16.166666666666668,
+                    25.0
+                ]
+            },
+            "fitness_function": "angle_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 17,
+                "Time steps": 45695.0,
+                "Rule": 174,
+                "Time step history": [
+                    218.0,
+                    829.5,
+                    435.75,
+                    615.0,
+                    512.75,
+                    338.5,
+                    1466.5,
+                    35585.0,
+                    7459.5,
+                    8123.0,
+                    6133.5,
+                    4263.3,
+                    3557.4166666666665,
+                    3056.0714285714284,
+                    2679.6875,
+                    637.75,
+                    45695.0,
+                    6322.5,
+                    3167.0,
+                    1902.5,
+                    1488.8,
+                    49.0,
+                    54.0,
+                    33.5,
+                    37.0,
+                    39.5,
+                    44.5,
+                    38.0,
+                    63.0,
+                    68.5,
+                    75.0,
+                    58.75,
+                    55.0,
+                    83.0,
+                    68.5,
+                    71.5,
+                    74.0,
+                    72.5,
+                    93.5,
+                    90.5,
+                    69.5,
+                    63.0,
+                    88.5,
+                    81.0,
+                    57.25,
+                    89.5,
+                    37.5,
+                    44.5,
+                    54.0,
+                    61.0
+                ]
+            },
+            "fitness_function": "time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 14,
+                "Time steps": 37236.0,
+                "Rule": 208,
+                "Time step history": [
+                    121.0,
+                    180.0,
+                    235.5,
+                    259.0,
+                    268.0,
+                    255.25,
+                    262.0,
+                    417.0,
+                    263.0,
+                    1392.0,
+                    1695.5,
+                    1104.5,
+                    29396.0,
+                    37236.0,
+                    18624.25,
+                    88.33333333333333,
+                    68.375,
+                    18.0,
+                    305.0,
+                    161.5,
+                    117.5,
+                    136.25,
+                    430.5,
+                    899.0,
+                    2458.5,
+                    1556.25,
+                    1209.25,
+                    811.1666666666666,
+                    409.8333333333333,
+                    311.0,
+                    252.4,
+                    34.0,
+                    137.5,
+                    88.0,
+                    60.0,
+                    48.875,
+                    58.0,
+                    38.75,
+                    34.5,
+                    21.5,
+                    106.5,
+                    71.0,
+                    39.0,
+                    101.5,
+                    248.0,
+                    280.0,
+                    272.75,
+                    241.5,
+                    232.0,
+                    252.5
+                ]
+            },
+            "fitness_function": "position_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 4,
+                "Time steps": 2082.5,
+                "Rule": 242,
+                "Time step history": [
+                    102.5,
+                    109.5,
+                    529.0,
+                    2082.5,
+                    676.0,
+                    804.5,
+                    901.5,
+                    1638.5,
+                    792.5,
+                    1229.5,
+                    1599.5,
+                    451.125,
+                    310.125,
+                    250.1,
+                    210.83333333333334,
+                    182.85714285714286,
+                    161.3125,
+                    144.83333333333334,
+                    31.5,
+                    78.0,
+                    74.0,
+                    53.0,
+                    75.0,
+                    37.0,
+                    44.0,
+                    371.0,
+                    191.5,
+                    137.5,
+                    91.75,
+                    79.2,
+                    104.0,
+                    121.0,
+                    94.0,
+                    64.75,
+                    43.5,
+                    54.5,
+                    43.0,
+                    43.5,
+                    53.5,
+                    27.833333333333332,
+                    25.0,
+                    20.0,
+                    56.0,
+                    50.5,
+                    37.5,
+                    194.0,
+                    253.5,
+                    212.0,
+                    121.0,
+                    297.0
+                ]
+            },
+            "fitness_function": "position_and_angle_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 6,
+                "Time steps": 50103.0,
+                "Rule": 208,
+                "Time step history": [
+                    149.0,
+                    187.0,
+                    555.0,
+                    629.25,
+                    591.5,
+                    50103.0,
+                    23967.25,
+                    16009.0,
+                    50073.0,
+                    25845.5,
+                    17274.5,
+                    12997.75,
+                    221.0,
+                    359.5,
+                    824.5,
+                    420.25,
+                    294.6666666666667,
+                    244.875,
+                    197.7,
+                    124.58333333333333,
+                    108.07142857142857,
+                    30.0,
+                    80.5,
+                    72.0,
+                    68.0,
+                    79.5,
+                    149.5,
+                    111.25,
+                    149.0,
+                    803.0,
+                    752.5,
+                    263.25,
+                    182.33333333333334,
+                    49.0,
+                    47.0,
+                    61.0,
+                    53.5,
+                    44.5,
+                    48.0,
+                    47.0,
+                    65.5,
+                    192.5,
+                    229.0,
+                    237.5,
+                    243.0,
+                    130.0,
+                    142.0,
+                    219.5,
+                    276.0,
+                    221.0
+                ]
+            },
+            "fitness_function": "position_and_angle_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 9,
+                "Time steps": 5518.0,
+                "Rule": 200,
+                "Time step history": [
+                    144.0,
+                    352.5,
+                    244.75,
+                    359.0,
+                    485.5,
+                    410.5,
+                    748.0,
+                    4215.5,
+                    5518.0,
+                    3836.5,
+                    1853.1666666666667,
+                    1392.25,
+                    883.1,
+                    737.4166666666666,
+                    636.7142857142857,
+                    563.3125,
+                    327.0,
+                    223.0,
+                    228.5,
+                    320.5,
+                    572.0,
+                    617.5,
+                    996.0,
+                    412.1,
+                    346.5833333333333,
+                    284.0,
+                    366.5,
+                    403.5,
+                    247.75,
+                    1469.0,
+                    283.0,
+                    151.33333333333334,
+                    80.25,
+                    39.5,
+                    50.0,
+                    91.0,
+                    65.5,
+                    44.25,
+                    56.0,
+                    100.5,
+                    82.5,
+                    86.0,
+                    63.333333333333336,
+                    43.5,
+                    50.0,
+                    46.5,
+                    109.0,
+                    81.0,
+                    58.5,
+                    60.0
+                ]
+            },
+            "fitness_function": "angle_and_time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 13,
+                "Time steps": 50055.5,
+                "Rule": 178,
+                "Time step history": [
+                    553.0,
+                    267.5,
+                    367.5,
+                    453.0,
+                    569.0,
+                    2848.5,
+                    1530.0,
+                    988.0,
+                    1062.5,
+                    1024.5,
+                    1647.0,
+                    4089.5,
+                    50055.5,
+                    25053.75,
+                    16743.0,
+                    12580.875,
+                    10077.0,
+                    160.5,
+                    224.0,
+                    117.0,
+                    65.5,
+                    54.0,
+                    179.5,
+                    131.25,
+                    143.5,
+                    67.83333333333333,
+                    48.5,
+                    71.5,
+                    35.9,
+                    31.5,
+                    41.0,
+                    56.0,
+                    60.0,
+                    474.0,
+                    244.5,
+                    109.5,
+                    86.25,
+                    139.5,
+                    144.5,
+                    223.0,
+                    280.0,
+                    315.0,
+                    376.5,
+                    350.0,
+                    147.5,
+                    108.0,
+                    64.0,
+                    66.75,
+                    58.5,
+                    57.0
+                ]
+            },
+            "fitness_function": "position_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 6,
+                "Time steps": 1299.5,
+                "Rule": 209,
+                "Time step history": [
+                    122.0,
+                    196.0,
+                    204.0,
+                    435.5,
+                    1159.0,
+                    1299.5,
+                    562.0,
+                    739.0,
+                    689.5,
+                    975.5,
+                    766.0,
+                    750.5,
+                    1064.0,
+                    1079.5,
+                    629.0,
+                    453.5,
+                    359.875,
+                    197.8,
+                    166.0,
+                    143.0,
+                    390.5,
+                    194.25,
+                    126.16666666666667,
+                    98.125,
+                    82.8,
+                    74.83333333333333,
+                    50.5,
+                    45.5,
+                    50.5,
+                    70.5,
+                    64.5,
+                    71.0,
+                    45.0,
+                    80.5,
+                    90.0,
+                    104.0,
+                    159.0,
+                    90.25,
+                    47.625,
+                    50.0,
+                    39.083333333333336,
+                    46.5,
+                    39.0,
+                    32.5,
+                    35.0,
+                    37.5,
+                    50.5,
+                    58.5,
+                    35.25,
+                    21.0
+                ]
+            },
+            "fitness_function": "time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 7,
+                "Time steps": 6202.0,
+                "Rule": 178,
+                "Time step history": [
+                    150.5,
+                    203.5,
+                    401.5,
+                    1703.5,
+                    3827.5,
+                    5371.0,
+                    6202.0,
+                    1397.25,
+                    940.3333333333334,
+                    711.375,
+                    227.0,
+                    288.5,
+                    354.5,
+                    347.0,
+                    265.25,
+                    244.0,
+                    260.5,
+                    304.0,
+                    256.5,
+                    309.5,
+                    315.5,
+                    221.0,
+                    262.5,
+                    303.5,
+                    303.0,
+                    340.0,
+                    296.0,
+                    300.0,
+                    259.5,
+                    167.25,
+                    137.3,
+                    116.58333333333333,
+                    102.0,
+                    55.5,
+                    109.5,
+                    92.5,
+                    350.0,
+                    169.0,
+                    226.5,
+                    232.0,
+                    332.0,
+                    158.25,
+                    122.83333333333333,
+                    97.125,
+                    49.0,
+                    60.5,
+                    54.0,
+                    64.5,
+                    63.0,
+                    54.5
+                ]
+            },
+            "fitness_function": "position_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 6,
+                "Time steps": 2661.5,
+                "Rule": 244,
+                "Time step history": [
+                    74.5,
+                    424.0,
+                    231.75,
+                    586.0,
+                    256.0,
+                    2661.5,
+                    1372.5,
+                    708.75,
+                    254.5,
+                    1032.5,
+                    903.5,
+                    2447.5,
+                    1365.75,
+                    1146.0,
+                    1208.5,
+                    775.3,
+                    649.6666666666666,
+                    558.3571428571429,
+                    490.3125,
+                    437.72222222222223,
+                    228.5,
+                    295.5,
+                    255.0,
+                    333.0,
+                    275.0,
+                    280.75,
+                    278.0,
+                    316.5,
+                    303.5,
+                    347.5,
+                    272.0,
+                    264.5,
+                    300.0,
+                    341.5,
+                    272.5,
+                    234.83333333333334,
+                    259.0,
+                    167.375,
+                    137.8,
+                    88.875,
+                    74.1,
+                    51.0,
+                    40.5,
+                    57.5,
+                    76.5,
+                    57.5,
+                    47.0,
+                    40.5,
+                    24.75,
+                    28.5
+                ]
+            },
+            "fitness_function": "position_and_angle_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 10,
+                "Time steps": 3886.0,
+                "Rule": 232,
+                "Time step history": [
+                    670.5,
+                    156.0,
+                    647.5,
+                    615.5,
+                    602.5,
+                    1314.5,
+                    1996.5,
+                    2553.5,
+                    3375.0,
+                    3886.0,
+                    1954.0,
+                    827.6666666666666,
+                    1628.0,
+                    695.5,
+                    468.5,
+                    46.5,
+                    32.0,
+                    39.0,
+                    45.5,
+                    28.5,
+                    42.0,
+                    20.75,
+                    16.666666666666668,
+                    24.5,
+                    44.0,
+                    51.5,
+                    51.0,
+                    56.0,
+                    90.0,
+                    114.0,
+                    113.0,
+                    101.0,
+                    79.5,
+                    76.0,
+                    56.5,
+                    52.0,
+                    39.375,
+                    33.5,
+                    202.5,
+                    213.5,
+                    245.0,
+                    460.5,
+                    1115.0,
+                    570.0,
+                    202.83333333333334,
+                    155.75,
+                    118.1,
+                    100.25,
+                    87.42857142857143,
+                    78.75
+                ]
+            },
+            "fitness_function": "time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 4,
+                "Time steps": 332.5,
+                "Rule": 14,
+                "Time step history": [
+                    162.5,
+                    204.0,
+                    225.0,
+                    332.5,
+                    242.0,
+                    278.0,
+                    272.5,
+                    293.0,
+                    279.5,
+                    318.0,
+                    293.0,
+                    295.0,
+                    254.0,
+                    258.5,
+                    280.0,
+                    255.5,
+                    322.5,
+                    312.5,
+                    277.5,
+                    249.5,
+                    269.5,
+                    260.0,
+                    239.0,
+                    285.0,
+                    330.0,
+                    285.0,
+                    191.0,
+                    258.5,
+                    249.5,
+                    247.0,
+                    221.5,
+                    232.5,
+                    133.25,
+                    101.83333333333333,
+                    87.125,
+                    59.0,
+                    57.5,
+                    55.0,
+                    39.666666666666664,
+                    31.75,
+                    63.0,
+                    226.5,
+                    53.5,
+                    68.5,
+                    56.5,
+                    65.0,
+                    53.5,
+                    95.0,
+                    65.5,
+                    46.5
+                ]
+            },
+            "fitness_function": "time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 5225.0,
+                "Rule": 138,
+                "Time step history": [
+                    211.5,
+                    5225.0,
+                    2730.0,
+                    911.5,
+                    697.5,
+                    689.0,
+                    655.0,
+                    706.5,
+                    639.75,
+                    1306.0,
+                    739.75,
+                    718.0,
+                    447.0,
+                    212.0,
+                    195.0,
+                    195.0,
+                    412.5,
+                    691.0,
+                    445.0,
+                    575.5,
+                    344.5,
+                    280.3333333333333,
+                    260.0,
+                    272.5,
+                    195.41666666666666,
+                    169.78571428571428,
+                    150.875,
+                    187.5,
+                    294.5,
+                    118.5,
+                    336.5,
+                    177.5,
+                    165.0,
+                    229.0,
+                    158.0,
+                    206.0,
+                    113.5,
+                    80.16666666666667,
+                    44.5,
+                    56.5,
+                    51.0,
+                    74.5,
+                    54.5,
+                    83.0,
+                    103.0,
+                    112.5,
+                    123.5,
+                    82.0,
+                    2246.5,
+                    1246.75
+                ]
+            },
+            "fitness_function": "position_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 21,
+                "Time steps": 1653.5,
+                "Rule": 232,
+                "Time step history": [
+                    400.0,
+                    339.5,
+                    662.0,
+                    318.25,
+                    499.5,
+                    373.0,
+                    284.0,
+                    344.5,
+                    351.0,
+                    663.0,
+                    1155.0,
+                    1066.5,
+                    587.5,
+                    414.1666666666667,
+                    1495.0,
+                    216.0,
+                    253.0,
+                    221.0,
+                    251.0,
+                    1464.5,
+                    1653.5,
+                    425.0,
+                    287.0,
+                    218.125,
+                    134.6,
+                    117.16666666666667,
+                    101.64285714285714,
+                    89.9375,
+                    80.88888888888889,
+                    73.65,
+                    61.5,
+                    47.5,
+                    273.0,
+                    536.0,
+                    308.0,
+                    232.0,
+                    279.0,
+                    223.0,
+                    207.0,
+                    214.5,
+                    223.5,
+                    633.0,
+                    573.0,
+                    297.5,
+                    117.5,
+                    79.5,
+                    65.9,
+                    80.5,
+                    44.5,
+                    62.0
+                ]
+            },
+            "fitness_function": "position_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 11,
+                "Time steps": 50019.5,
+                "Rule": 140,
+                "Time step history": [
+                    149.0,
+                    693.0,
+                    400.25,
+                    452.0,
+                    626.0,
+                    1560.0,
+                    586.0,
+                    570.0,
+                    1109.25,
+                    11691.0,
+                    50019.5,
+                    25032.5,
+                    16692.166666666668,
+                    12530.125,
+                    10025.9,
+                    980.1428571428571,
+                    862.8125,
+                    3852.5,
+                    474.0,
+                    323.3333333333333,
+                    249.0,
+                    202.6,
+                    63.666666666666664,
+                    26.75,
+                    18.625,
+                    30.0,
+                    24.0,
+                    23.333333333333332,
+                    20.0,
+                    23.0,
+                    20.0,
+                    108.5,
+                    61.0,
+                    70.5,
+                    46.5,
+                    88.5,
+                    77.0,
+                    84.5,
+                    63.0,
+                    99.0,
+                    77.0,
+                    45.333333333333336,
+                    205.5,
+                    160.0,
+                    147.5,
+                    160.25,
+                    163.0,
+                    187.0,
+                    213.5,
+                    199.5
+                ]
+            },
+            "fitness_function": "angle_and_time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 9,
+                "Time steps": 73202.0,
+                "Rule": 200,
+                "Time step history": [
+                    219.0,
+                    252.5,
+                    874.0,
+                    1643.5,
+                    6148.0,
+                    3937.5,
+                    38165.0,
+                    52266.0,
+                    73202.0,
+                    25841.5,
+                    17070.666666666668,
+                    8213.25,
+                    6572.7,
+                    5482.25,
+                    87.0,
+                    92.0,
+                    54.75,
+                    57.5,
+                    51.0,
+                    50.5,
+                    102.5,
+                    91.5,
+                    207.0,
+                    1815.5,
+                    2903.0,
+                    1461.75,
+                    653.3333333333334,
+                    27.0,
+                    28.0,
+                    27.5,
+                    28.5,
+                    32.0,
+                    38.0,
+                    26.0,
+                    91.5,
+                    922.5,
+                    918.5,
+                    461.3333333333333,
+                    331.8333333333333,
+                    257.5,
+                    740.5,
+                    500.5,
+                    660.0,
+                    683.5,
+                    343.75,
+                    177.16666666666666,
+                    136.75,
+                    49.5,
+                    38.0,
+                    41.0
+                ]
+            },
+            "fitness_function": "angle_and_time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 14,
+                "Time steps": 2395.0,
+                "Rule": 202,
+                "Time step history": [
+                    179.5,
+                    341.0,
+                    322.0,
+                    637.0,
+                    573.5,
+                    622.5,
+                    587.5,
+                    780.5,
+                    1359.5,
+                    1471.0,
+                    1408.0,
+                    1092.0,
+                    1832.0,
+                    2395.0,
+                    1610.0,
+                    1212.0,
+                    877.75,
+                    610.1,
+                    513.8333333333334,
+                    339.6,
+                    321.0,
+                    96.0,
+                    72.66666666666667,
+                    50.0,
+                    46.0,
+                    377.0,
+                    199.75,
+                    140.0,
+                    162.5,
+                    150.5,
+                    1512.0,
+                    704.5,
+                    483.3333333333333,
+                    371.375,
+                    303.6,
+                    258.9166666666667,
+                    81.75,
+                    157.0,
+                    173.5,
+                    94.0,
+                    71.0,
+                    82.0,
+                    46.6,
+                    34.166666666666664,
+                    17.5,
+                    19.5,
+                    18.0,
+                    66.5,
+                    99.5,
+                    75.0
+                ]
+            },
+            "fitness_function": "angle_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 20,
+                "Time steps": 1869.0,
+                "Rule": 243,
+                "Time step history": [
+                    472.0,
+                    574.0,
+                    509.0,
+                    666.5,
+                    595.5,
+                    897.0,
+                    635.5,
+                    527.25,
+                    584.5,
+                    611.0,
+                    316.75,
+                    215.66666666666666,
+                    164.625,
+                    236.5,
+                    200.0,
+                    256.0,
+                    304.0,
+                    587.5,
+                    671.0,
+                    1869.0,
+                    313.25,
+                    214.5,
+                    107.25,
+                    82.5,
+                    85.0,
+                    36.833333333333336,
+                    32.5,
+                    31.75,
+                    51.0,
+                    30.5,
+                    51.0,
+                    250.5,
+                    55.5,
+                    141.0,
+                    127.5,
+                    107.5,
+                    64.0,
+                    118.5,
+                    130.0,
+                    47.5,
+                    83.0,
+                    334.5,
+                    171.5,
+                    117.5,
+                    90.5,
+                    357.0,
+                    198.5,
+                    135.33333333333334,
+                    83.25,
+                    84.0
+                ]
+            },
+            "fitness_function": "angle_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 7,
+                "Time steps": 1342.5,
+                "Rule": 244,
+                "Time step history": [
+                    129.5,
+                    195.5,
+                    140.0,
+                    205.0,
+                    223.5,
+                    533.0,
+                    1342.5,
+                    1048.0,
+                    1224.5,
+                    642.0,
+                    579.0,
+                    388.5,
+                    265.6666666666667,
+                    278.0,
+                    211.5,
+                    248.0,
+                    272.5,
+                    218.5,
+                    246.5,
+                    309.5,
+                    296.5,
+                    330.0,
+                    177.0,
+                    124.875,
+                    97.9,
+                    84.08333333333333,
+                    74.07142857142857,
+                    49.5,
+                    55.5,
+                    70.5,
+                    48.5,
+                    70.0,
+                    52.5,
+                    282.0,
+                    140.5,
+                    90.33333333333333,
+                    107.5,
+                    64.0,
+                    55.583333333333336,
+                    51.5,
+                    48.0,
+                    46.0,
+                    45.0,
+                    57.0,
+                    184.5,
+                    282.0,
+                    115.83333333333333,
+                    91.0,
+                    69.6,
+                    37.0
+                ]
+            },
+            "fitness_function": "time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 19,
+                "Time steps": 5043.5,
+                "Rule": 138,
+                "Time step history": [
+                    248.5,
+                    243.25,
+                    413.5,
+                    383.75,
+                    288.0,
+                    863.5,
+                    457.25,
+                    233.66666666666666,
+                    381.0,
+                    413.0,
+                    356.5,
+                    261.6666666666667,
+                    213.0,
+                    199.0,
+                    230.5,
+                    263.5,
+                    1648.0,
+                    3316.0,
+                    5043.5,
+                    2625.25,
+                    1812.1666666666667,
+                    1089.8,
+                    909.4166666666666,
+                    780.7142857142857,
+                    684.125,
+                    610.8333333333334,
+                    162.0,
+                    179.0,
+                    170.0,
+                    102.83333333333333,
+                    80.0,
+                    68.0,
+                    30.8,
+                    42.0,
+                    38.0,
+                    44.5,
+                    42.5,
+                    44.0,
+                    25.0,
+                    156.0,
+                    217.0,
+                    118.75,
+                    880.5,
+                    849.5,
+                    979.5,
+                    513.75,
+                    351.8333333333333,
+                    268.75,
+                    106.5,
+                    809.0
+                ]
+            },
+            "fitness_function": "position_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 7,
+                "Time steps": 1004.0,
+                "Rule": 68,
+                "Time step history": [
+                    84.0,
+                    154.0,
+                    258.0,
+                    172.0,
+                    255.25,
+                    311.0,
+                    1004.0,
+                    329.0,
+                    275.5,
+                    388.5,
+                    333.5,
+                    341.0,
+                    275.0,
+                    244.0,
+                    263.5,
+                    335.0,
+                    266.0,
+                    295.0,
+                    284.0,
+                    320.5,
+                    324.0,
+                    302.0,
+                    310.5,
+                    283.0,
+                    381.5,
+                    288.5,
+                    260.5,
+                    309.0,
+                    280.5,
+                    158.83333333333334,
+                    123.5,
+                    105.3,
+                    55.5,
+                    64.0,
+                    47.0,
+                    65.5,
+                    46.5,
+                    64.5,
+                    57.0,
+                    60.5,
+                    59.0,
+                    68.0,
+                    43.75,
+                    58.5,
+                    47.0,
+                    63.5,
+                    56.0,
+                    49.5,
+                    44.0,
+                    50.0
+                ]
+            },
+            "fitness_function": "total_time_steps",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 27,
+                "Time steps": 5454.0,
+                "Rule": 178,
+                "Time step history": [
+                    323.0,
+                    891.0,
+                    390.5,
+                    1274.5,
+                    642.75,
+                    433.0,
+                    327.0,
+                    263.7,
+                    305.5,
+                    231.5,
+                    185.75,
+                    166.0,
+                    341.0,
+                    178.0,
+                    130.33333333333334,
+                    100.25,
+                    221.5,
+                    210.5,
+                    261.5,
+                    505.5,
+                    1101.0,
+                    1932.5,
+                    2099.0,
+                    1719.5,
+                    1879.5,
+                    962.25,
+                    5454.0,
+                    3619.0,
+                    1815.25,
+                    1227.125,
+                    502.125,
+                    91.0,
+                    39.333333333333336,
+                    61.5,
+                    52.5,
+                    84.5,
+                    62.0,
+                    48.0,
+                    61.5,
+                    175.0,
+                    238.5,
+                    217.0,
+                    242.0,
+                    272.5,
+                    140.0,
+                    96.16666666666667,
+                    60.5,
+                    71.5,
+                    523.0,
+                    510.0
+                ]
+            },
+            "fitness_function": "angle_and_time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 9,
+                "Time steps": 1181.5,
+                "Rule": 202,
+                "Time step history": [
+                    111.5,
+                    288.0,
+                    291.25,
+                    512.5,
+                    376.25,
+                    767.5,
+                    792.5,
+                    694.0,
+                    1181.5,
+                    610.0,
+                    621.0,
+                    664.5,
+                    612.0,
+                    310.5,
+                    253.5,
+                    887.0,
+                    262.0,
+                    586.0,
+                    852.0,
+                    1112.5,
+                    914.5,
+                    977.0,
+                    972.0,
+                    503.0,
+                    270.0,
+                    252.0,
+                    270.0,
+                    342.0,
+                    287.0,
+                    267.5,
+                    279.0,
+                    276.0,
+                    232.5,
+                    321.5,
+                    269.0,
+                    265.5,
+                    275.0,
+                    250.5,
+                    283.0,
+                    280.0,
+                    141.75,
+                    215.0,
+                    191.5,
+                    101.25,
+                    71.16666666666667,
+                    48.5,
+                    51.0,
+                    38.5,
+                    41.5,
+                    63.0
+                ]
+            },
+            "fitness_function": "position_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 15,
+                "Time steps": 1665.5,
+                "Rule": 172,
+                "Time step history": [
+                    190.5,
+                    205.0,
+                    306.0,
+                    258.5,
+                    297.0,
+                    780.5,
+                    898.0,
+                    850.25,
+                    587.5,
+                    825.0,
+                    1240.0,
+                    1564.5,
+                    847.0,
+                    963.0,
+                    1665.5,
+                    1316.0,
+                    658.3333333333334,
+                    1103.5,
+                    557.0,
+                    275.1666666666667,
+                    335.5,
+                    326.0,
+                    279.5,
+                    284.5,
+                    297.0,
+                    265.0,
+                    286.0,
+                    248.0,
+                    326.0,
+                    306.0,
+                    325.0,
+                    292.5,
+                    298.0,
+                    153.0,
+                    111.5,
+                    89.375,
+                    81.1,
+                    59.0,
+                    37.25,
+                    158.5,
+                    90.75,
+                    188.5,
+                    112.25,
+                    63.5,
+                    80.5,
+                    93.5,
+                    74.5,
+                    49.5,
+                    57.5,
+                    54.5
+                ]
+            },
+            "fitness_function": "position_and_angle_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 11,
+                "Time steps": 959.5,
+                "Rule": 232,
+                "Time step history": [
+                    105.5,
+                    116.0,
+                    516.5,
+                    268.5,
+                    520.5,
+                    390.5,
+                    462.5,
+                    499.5,
+                    736.5,
+                    628.0,
+                    959.5,
+                    716.75,
+                    899.5,
+                    730.0,
+                    666.5,
+                    679.5,
+                    935.0,
+                    464.25,
+                    305.375,
+                    128.5,
+                    92.25,
+                    75.7,
+                    129.0,
+                    168.0,
+                    168.5,
+                    193.0,
+                    179.0,
+                    196.0,
+                    118.33333333333333,
+                    90.83333333333333,
+                    73.625,
+                    73.5,
+                    100.5,
+                    102.0,
+                    55.75,
+                    40.666666666666664,
+                    31.5,
+                    31.25,
+                    47.0,
+                    37.0,
+                    44.0,
+                    59.0,
+                    65.5,
+                    48.5,
+                    47.5,
+                    62.0,
+                    59.5,
+                    80.5,
+                    239.0,
+                    245.0
+                ]
+            },
+            "fitness_function": "time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 8,
+                "Time steps": 981.5,
+                "Rule": 208,
+                "Time step history": [
+                    251.5,
+                    279.5,
+                    323.0,
+                    275.0,
+                    228.0,
+                    167.0,
+                    778.5,
+                    981.5,
+                    799.0,
+                    362.25,
+                    244.66666666666666,
+                    228.0,
+                    241.5,
+                    252.0,
+                    411.75,
+                    516.0,
+                    335.75,
+                    248.0,
+                    274.5,
+                    243.5,
+                    280.5,
+                    275.0,
+                    287.5,
+                    281.5,
+                    258.0,
+                    317.5,
+                    315.0,
+                    332.0,
+                    156.25,
+                    107.16666666666667,
+                    82.375,
+                    48.1,
+                    23.5,
+                    15.5,
+                    151.0,
+                    207.0,
+                    202.0,
+                    215.75,
+                    266.5,
+                    214.5,
+                    214.5,
+                    195.0,
+                    195.5,
+                    202.5,
+                    259.0,
+                    235.5,
+                    253.5,
+                    177.16666666666666,
+                    226.5,
+                    139.0
+                ]
+            },
+            "fitness_function": "total_time_steps",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 8,
+                "Time steps": 4744.0,
+                "Rule": 172,
+                "Time step history": [
+                    58.5,
+                    273.0,
+                    146.5,
+                    259.5,
+                    528.5,
+                    573.5,
+                    826.0,
+                    4744.0,
+                    2483.75,
+                    925.5,
+                    828.5,
+                    1804.0,
+                    898.0,
+                    954.0,
+                    546.5,
+                    369.5,
+                    242.875,
+                    197.6,
+                    20.25,
+                    16.833333333333332,
+                    21.5,
+                    38.5,
+                    25.75,
+                    36.0,
+                    56.5,
+                    69.0,
+                    244.0,
+                    258.0,
+                    672.0,
+                    435.5,
+                    275.8333333333333,
+                    252.0,
+                    305.5,
+                    265.0,
+                    163.25,
+                    95.5,
+                    73.5,
+                    66.1,
+                    47.5,
+                    46.5,
+                    93.5,
+                    40.27777777777778,
+                    24.75,
+                    31.5,
+                    33.5,
+                    140.5,
+                    170.5,
+                    202.5,
+                    762.5,
+                    1287.0
+                ]
+            },
+            "fitness_function": "position_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 9,
+                "Time steps": 27344.5,
+                "Rule": 186,
+                "Time step history": [
+                    120.0,
+                    344.5,
+                    298.0,
+                    379.0,
+                    949.5,
+                    586.5,
+                    1607.0,
+                    669.0,
+                    27344.5,
+                    732.5,
+                    373.5,
+                    253.5,
+                    933.0,
+                    470.5,
+                    416.5,
+                    430.5,
+                    425.0,
+                    257.0,
+                    206.5,
+                    183.5,
+                    258.5,
+                    203.5,
+                    210.0,
+                    292.5,
+                    313.0,
+                    361.0,
+                    317.0,
+                    313.0,
+                    320.0,
+                    293.0,
+                    172.5,
+                    528.5,
+                    2397.5,
+                    1358.25,
+                    914.8333333333334,
+                    162.0,
+                    28.75,
+                    23.5,
+                    19.0,
+                    26.5,
+                    41.5,
+                    32.25,
+                    47.0,
+                    72.0,
+                    62.5,
+                    40.75,
+                    44.0,
+                    49.0,
+                    230.0,
+                    203.0
+                ]
+            },
+            "fitness_function": "position_and_angle_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 8,
+                "Time steps": 4681.5,
+                "Rule": 202,
+                "Time step history": [
+                    136.5,
+                    270.5,
+                    288.5,
+                    834.0,
+                    1259.5,
+                    1030.0,
+                    2017.0,
+                    4681.5,
+                    2345.5,
+                    1568.0,
+                    749.875,
+                    608.0,
+                    772.0,
+                    405.25,
+                    276.625,
+                    240.5,
+                    431.0,
+                    281.5,
+                    257.0,
+                    260.5,
+                    175.33333333333334,
+                    139.0,
+                    116.8,
+                    295.5,
+                    263.5,
+                    273.0,
+                    288.0,
+                    263.0,
+                    258.5,
+                    138.25,
+                    101.16666666666667,
+                    78.625,
+                    80.0,
+                    316.0,
+                    178.25,
+                    135.5,
+                    175.5,
+                    99.25,
+                    87.91666666666667,
+                    80.57142857142857,
+                    54.75,
+                    49.5,
+                    42.0,
+                    66.0,
+                    74.0,
+                    72.0,
+                    68.0,
+                    85.0,
+                    62.5,
+                    78.5
+                ]
+            },
+            "fitness_function": "total_time_steps",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 7,
+                "Time steps": 2992.0,
+                "Rule": 202,
+                "Time step history": [
+                    120.5,
+                    238.5,
+                    220.0,
+                    267.0,
+                    290.75,
+                    2475.0,
+                    2992.0,
+                    1500.5,
+                    1003.0,
+                    359.0,
+                    398.5,
+                    522.5,
+                    522.5,
+                    372.0,
+                    355.5,
+                    303.0,
+                    275.0,
+                    307.0,
+                    334.0,
+                    405.0,
+                    290.5,
+                    277.5,
+                    241.5,
+                    266.5,
+                    292.5,
+                    205.5,
+                    115.0,
+                    85.16666666666667,
+                    68.0,
+                    64.5,
+                    65.0,
+                    57.5,
+                    60.0,
+                    56.0,
+                    61.0,
+                    60.0,
+                    30.25,
+                    102.5,
+                    72.5,
+                    111.0,
+                    105.5,
+                    134.5,
+                    83.75,
+                    780.5,
+                    2032.0,
+                    427.0,
+                    181.0,
+                    142.25,
+                    239.0,
+                    123.25
+                ]
+            },
+            "fitness_function": "angle_and_time_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 300,
+                "n_generations": 50,
+                "fitness_function": "position_and_angle_based",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "stats": {
+                "Best generation": 6,
+                "Time steps": 1798.0,
+                "Rule": 169,
+                "Time step history": [
+                    179.5,
+                    280.5,
+                    325.75,
+                    575.0,
+                    360.0,
+                    1798.0,
+                    1340.75,
+                    897.3333333333334,
+                    678.25,
+                    544.5,
+                    916.0,
+                    718.0,
+                    1230.5,
+                    625.25,
+                    492.0,
+                    1571.5,
+                    796.5,
+                    168.0,
+                    127.875,
+                    58.8,
+                    41.0,
+                    54.5,
+                    42.0,
+                    55.0,
+                    43.5,
+                    49.5,
+                    1481.0,
+                    750.25,
+                    508.1666666666667,
+                    385.625,
+                    149.5,
+                    107.33333333333333,
+                    862.0,
+                    225.0,
+                    240.5,
+                    118.0,
+                    81.83333333333333,
+                    41.0,
+                    26.5,
+                    21.5,
+                    50.0,
+                    69.5,
+                    50.5,
+                    71.5,
+                    96.5,
+                    66.75,
+                    39.5,
+                    79.5,
+                    67.0,
+                    63.5
+                ]
+            },
+            "fitness_function": "position_and_angle_based",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": false,
+                "render_cart": false,
+                "render_ca": false
+            },
+            "evolution": {
+                "population_limit": 50,
+                "n_generations": 3,
+                "fitness_function": "position_and_angle_based",
+                "reproduction_criterion": "fitness_proportional",
+                "selection_criterion": "tournament",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {},
+            "render_cart": false,
+            "stats": {
+                "Best generation": 3,
+                "Time steps": 108.5,
+                "Rule": 212,
+                "Time step history": [
+                    72.0,
+                    78.5,
+                    108.5
+                ]
+            }
         }
     ]
 }

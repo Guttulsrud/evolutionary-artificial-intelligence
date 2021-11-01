@@ -1,9 +1,9 @@
-from typing import List
+from typing import List, Tuple
 import random
 from classes.Individual import Individual
 from classes.cartpole import run_cart
 from utils.general_utils import get_max_rule
-from utils.evolution import get_criterion_function
+from utils.evolution import get_criterion_function, fitness_proportional_selection
 from scipy.special import softmax
 import numpy as np
 
@@ -69,19 +69,22 @@ class Population:
             run_cart(individual, self.config)
             self.config['render_cart'] = False
 
-        survivors = self.select_survivors(self.individuals)
+        self.individuals = self.evolve_population()
 
-        n = self.config['evolution']['population_limit'] - len(survivors)
+    def evolve_population(self) -> List[Individual]:
+        new_population = self.select_survivors(self.individuals)
+        reproduction_criterion = get_criterion_function(self.config['evolution']['reproduction_criterion'])
 
-        logged_list = softmax([np.log(individual.get_fitness_score()) for individual in self.individuals])
+        parents_a = reproduction_criterion(self.individuals, 1 - self.config['evolution']['survival_rate'], True)
+        parents_b = reproduction_criterion(self.individuals, 1 - self.config['evolution']['survival_rate'], True)
 
-        new_population = survivors
-        for _ in range(n):
-            parents = np.random.choice(self.individuals, size=2, replace=False, p=logged_list)
-            child = parents[0].reproduce(parents[1])
+        np.random.shuffle(parents_a)
+
+        for parent_a, parent_b in zip(parents_a, parents_b):
+            child = parent_a.reproduce(parent_b)
             new_population.append(child)
 
-        self.individuals = sorted(new_population, key=lambda i: i.get_fitness_score(), reverse=True)
+        return sorted(new_population, key=lambda i: i.get_fitness_score(), reverse=True)
 
     def select_survivors(self, individuals: List[Individual]) -> List[Individual]:
 
