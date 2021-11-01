@@ -41,18 +41,18 @@ class Config:
         self.stats = {'Generation': generation + 1,
                       'Time steps survived': best_individual.get_time_steps_survived(),
                       'Best individual': best_individual.get_genotype(),
-                      'rule': best_individual.get_genotype()['rule_number'],
                       }
+
+
         append_stats(file_name=self.log_file, data=self.stats)
 
     def save_results(self):
         self.options['stats'] = {
             'Best generation': self.stats['Generation'],
             'Time steps': self.stats['Time steps survived'],
-            'Rule': self.stats['rule'],
             'Time step history': self.time_step_history
         }
-        with open('repro_city.json', 'r+') as file:
+        with open('anotother_result_file.json', 'r+') as file:
             file_data = json.load(file)
             file_data['configs'].append(self.options)
             file.seek(0)

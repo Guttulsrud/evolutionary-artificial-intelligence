@@ -1,0 +1,125 @@
+{
+    "config": {
+        "general": {
+            "random_search": true,
+            "render_cart": false,
+            "render_ca": false,
+            "phenotype": "nn"
+        },
+        "evolution": {
+            "population_limit": 300,
+            "n_generations": 50,
+            "fitness_function": "position_and_angle_based",
+            "reproduction_criterion": "fitness_proportional",
+            "selection_criterion": "tournament",
+            "episodes_per_individual": 2,
+            "mutation_rate": 0.001,
+            "survival_rate": 0.1
+        },
+        "ca": {
+            "action_type": "index",
+            "time_steps": {
+                "min": 5,
+                "max": 6
+            },
+            "width": {
+                "min": 5,
+                "max": 6
+            },
+            "kernel_size": [
+                3
+            ],
+            "pole_angle": {
+                "min": -3,
+                "max": 3
+            },
+            "pole_velocity": {
+                "min": -3,
+                "max": 3
+            },
+            "cart_position": {
+                "min": -3,
+                "max": 3
+            },
+            "cart_velocity": {
+                "min": -3,
+                "max": 3
+            },
+            "dependent_properties": {
+                "inputs": [
+                    {
+                        "name": "angle_index"
+                    }
+                ],
+                "output": [
+                    {
+                        "name": "action_index"
+                    }
+                ],
+                "rule_number": {
+                    "min": 0
+                }
+            }
+        },
+        "nn": {
+            "hidden_layers": [],
+            "step_size": 0.1
+        },
+        "stats": {},
+        "reproduction_criterion": "elitist"
+    },
+    "generations": [
+        {
+            "Generation": 1,
+            "Time steps survived": 14999.0,
+            "Best individual": {
+                "hidden_layers": [
+                    4,
+                    4
+                ],
+                "weights": [
+                    0.1767819559149183,
+                    0.347412541943379,
+                    0.3206986467115579,
+                    0.06286343870801692,
+                    0.05085561059919863,
+                    0.7840026264526119,
+                    0.35715920393696876,
+                    0.42594139797507446,
+                    0.40127610780468104,
+                    0.9454696727460001,
+                    0.772914197898253,
+                    0.5727977063411763,
+                    0.28511878053515616,
+                    0.7757881077185463,
+                    0.3436127642304717,
+                    0.8787715460726351,
+                    0.3337168576420938,
+                    0.8396826017560505,
+                    0.2782555457822462,
+                    0.24344987196632206,
+                    0.34691634513768554,
+                    0.44866904529559937,
+                    0.2612725488637586,
+                    0.1758279399461159,
+                    0.7559741985013676,
+                    0.2602369686468621,
+                    0.4104128746146045,
+                    0.1922127760297656,
+                    0.19724833444261947,
+                    0.35103096497949793,
+                    0.338392460192685,
+                    0.19591767796060755,
+                    0.08757151777935063,
+                    0.09378665303432165,
+                    0.7777330052980277,
+                    0.7613192065771648,
+                    0.13831486868652043,
+                    0.6654758874050875,
+                    0.41022747862807374,
+                    0.28060427342054106
+                ]
+            }
+        }
+    ]
+}

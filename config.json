@@ -2,11 +2,12 @@
   "general": {
     "random_search": true,
     "render_cart": false,
-    "render_ca": false
+    "render_ca": false,
+    "phenotype": "nn"
   },
   "evolution": {
-    "population_limit": 20,
-    "n_generations": 3,
+    "population_limit": 300,
+    "n_generations": 50,
     "fitness_function": "position_and_angle_based",
     "reproduction_criterion": "fitness_proportional",
     "selection_criterion": "tournament",
@@ -60,5 +61,7 @@
     }
   },
   "nn": {
+    "hidden_layers": [],
+    "step_size": 0.1
   }
 }
