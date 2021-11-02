@@ -4,7 +4,7 @@ import numpy as np
 from classes.Individual import Individual
 
 env = gym.make('CartPole-v0')
-max_steps = 15_000
+max_steps = 30_000
 env._max_episode_steps = max_steps
 
 

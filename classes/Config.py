@@ -43,7 +43,6 @@ class Config:
                       'Best individual': best_individual.get_genotype(),
                       }
 
-
         append_stats(file_name=self.log_file, data=self.stats)
 
     def save_results(self):
@@ -52,7 +51,7 @@ class Config:
             'Time steps': self.stats['Time steps survived'],
             'Time step history': self.time_step_history
         }
-        with open('anotother_result_file.json', 'r+') as file:
+        with open('final_results.json', 'r+') as file:
             file_data = json.load(file)
             file_data['configs'].append(self.options)
             file.seek(0)

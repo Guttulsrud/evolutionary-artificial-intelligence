@@ -1,13 +1,13 @@
 {
   "general": {
-    "random_search": true,
+    "random_search": false,
     "render_cart": false,
     "render_ca": false,
     "phenotype": "ca"
   },
   "evolution": {
-    "population_limit": 400,
-    "n_generations": 80,
+    "population_limit": 300,
+    "n_generations": 50,
     "fitness_function": "position_and_angle_based",
     "reproduction_criterion": "fitness_proportional",
     "selection_criterion": "fitness_proportional",
