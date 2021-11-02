@@ -22,14 +22,16 @@ def run_cart(individual: Individual, config: dict) -> [int]:
             observation, reward, done, info = env.step(action)
             observation = format_observation(observation)
             fitnesses = np.append(fitnesses,
-                                  calculate_time_step_fitness(observation, t,
-                                                              fitness_function=config['evolution']['fitness_function']))
+                                  get_fitness_score(
+                                      observation,
+                                      t,
+                                      fitness_function=config['evolution']['fitness_function']))
             if done or abs(observation['cart_position']) > 4:
                 individual.add_fitness_score(np.sum(fitnesses), t)
                 break
 
 
-def calculate_time_step_fitness(observation, total_time_steps, fitness_function='total_time_steps'):
+def get_fitness_score(observation, total_time_steps, fitness_function='total_time_steps'):
     fitness_function_map = {
         'total_time_steps': 1,
         'position_based': np.log(1 / abs(observation['cart_position']) + 1),

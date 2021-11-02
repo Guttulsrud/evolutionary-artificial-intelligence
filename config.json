@@ -6,16 +6,16 @@
     "phenotype": "ca"
   },
   "evolution": {
-    "population_limit": 400,
-    "n_generations": 80,
+    "population_limit": 300,
+    "n_generations": 100,
     "fitness_function": "position_and_angle_based",
     "reproduction_criterion": "fitness_proportional",
     "selection_criterion": "fitness_proportional",
-    "episodes_per_individual": 2,
+    "episodes_per_individual": 3,
     "mutation_rate": 0.001,
     "survival_rate": 0.1
   },
-  "ca": {
+  "ca":   {
     "action_type": "index",
     "time_steps": {
       "min": 5,
@@ -61,7 +61,14 @@
     }
   },
   "nn": {
-    "hidden_layers": [],
+    "hidden_layers": {
+      "min": 0,
+      "max": 3
+    },
+    "nodes": {
+      "min": 1,
+      "max": 5
+    },
     "step_size": 0.1
   }
 }
