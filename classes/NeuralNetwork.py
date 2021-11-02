@@ -8,7 +8,7 @@ class NeuralNetwork:
         self.genotype = genotype
         self.config = config
         if not genotype:
-            self.genotype = self.create_genotype()
+            self.create_genotype()
 
         self.nodes_per_layer = []
         self.layer_shapes = []
@@ -36,10 +36,15 @@ class NeuralNetwork:
         self.network = [np.reshape(weights, shape) for weights, shape in zip(network, self.layer_shapes)]
 
     def create_genotype(self):
+        layer_count_min = self.config['nn']['hidden_layers']['min']
+        layer_count_max = self.config['nn']['nodes']['max']
+        node_count_min = self.config['nn']['nodes']['min']
+        node_count_max = self.config['nn']['nodes']['max']
 
-        genotype = {'hidden_layers': [4, 4]}
+        layer_count = random.randint(layer_count_min, layer_count_max + 1)
 
-        return genotype
+        self.genotype['hidden_layers'] = [random.randint(node_count_min, node_count_max + 1)
+                                          for _ in range(layer_count)]
 
     def run(self, observation: dict) -> int:
         layer_input = list(observation.values())
@@ -55,7 +60,6 @@ class NeuralNetwork:
 
         return self.genotype
 
-
     def mutate_weights(self):
         step_size = self.config['nn']['step_size']
         weights_copy = self.genotype['weights']
@@ -68,4 +72,3 @@ class NeuralNetwork:
                 weights_copy[index] = new_value
 
         return weights_copy
-

@@ -11,36 +11,35 @@ class CellularAutomaton:
         self.mutated_genotype = None
         if not genotype:
             self.genotype = self.create_genotype()
-        self.rule_map = self.make_rule_map()
+        self.rule_map = self.make_rule_map()  # TODO: Rename to Lookup Table
 
     def create_genotype(self) -> dict:
-        config = self.config['ca']
+        template = self.config['ca']
 
-        width = random.randrange(config['width']['min'], config['width']['max'])
-        kernel_size = random.choice(config['kernel_size'])
+        width = random.randrange(template['width']['min'], template['width']['max'])
+        kernel_size = random.choice(template['kernel_size'])
         genotype = {
-            'time_steps': random.randrange(config['time_steps']['min'], config['time_steps']['max']),
+            'time_steps': random.randrange(template['time_steps']['min'], template['time_steps']['max']),
             'width': width,
             'kernel_size': kernel_size,
             'action_index': random.randrange(0, width),
             'rule_number': random.randrange(0, get_max_rule(kernel_size)),
             'pole_angle': [{
-                'value': random.randrange(config['pole_angle']['min'],
-                                          config['pole_angle']['max']) / 100,
+                'value': random.randrange(template['pole_angle']['min'],
+                                          template['pole_angle']['max']) / 100,
                 'index': random.randrange(0, width)}],
             'pole_velocity': [{
-                'value': random.randrange(config['pole_velocity']['min'],
-                                          config['pole_velocity']['max']) / 100,
+                'value': random.randrange(template['pole_velocity']['min'],
+                                          template['pole_velocity']['max']) / 100,
                 'index': random.randrange(0, width)}],
             'cart_position': [{
-                'value': random.randrange(config['cart_position']['min'],
-                                          config['cart_position']['max']) / 100,
+                'value': random.randrange(template['cart_position']['min'],
+                                          template['cart_position']['max']) / 100,
                 'index': random.randrange(0, width)}],
             'cart_velocity': [{
-                'value': random.randrange(config['cart_velocity']['min'],
-                                          config['cart_velocity']['max']) / 100,
+                'value': random.randrange(template['cart_velocity']['min'],
+                                          template['cart_velocity']['max']) / 100,
                 'index': random.randrange(0, width)}]
-
         }
 
         return genotype
@@ -133,6 +132,7 @@ class CellularAutomaton:
 
         self.mutated_genotype['rule_number'] = self.mutate_rule_number(other_parent)
 
+        # These do not care about the other parents values
         self.mutate_gene('pole_angle')
         self.mutate_gene('pole_velocity')
         self.mutate_gene('cart_position')

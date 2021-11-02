@@ -3,6 +3,7 @@ import json
 from classes.Population import Population
 from utils.general_utils import save_to_file, append_stats
 from utils.plot import render
+from tqdm import tqdm
 
 
 class Config:
@@ -18,10 +19,12 @@ class Config:
 
         population = Population(options)
 
-        for generation in range(options['evolution']['n_generations']):
+        for generation in tqdm(range(options['evolution']['n_generations'])):
 
             population.run_generation()
             best_individual = population.get_best_individual()
+            individuals = population.get_individuals()
+            population.evolve_population()
 
             if options['general']['render_ca']:
                 render(best_individual.get_phenotype().get_history())
@@ -30,6 +33,8 @@ class Config:
                 self.save_best_score(best_individual, generation)
 
             self.time_step_history.append(best_individual.get_time_steps_survived())
+            append_stats(file_name=self.log_file,
+                         data={'individuals': [individual.get_fitness_score() for individual in individuals]})
 
         self.save_results()
 

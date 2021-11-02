@@ -21,13 +21,15 @@ class Individual:
         config = self.config
 
         if config['general']['phenotype'] == 'nn':
-            phenotype = NeuralNetwork(config=config)
+            phenotype = NeuralNetwork(config=config, genotype=self.genotype)
         else:
-            phenotype = CellularAutomaton(config=config)
+            phenotype = CellularAutomaton(config=config, genotype=self.genotype)
 
         return phenotype
 
     def run(self, observation) -> int:
+        self.score_history = []
+        self.time_step_survived = []
         return self.phenotype.run(observation)
 
     def add_fitness_score(self, score: int, time_step: int) -> None:
@@ -35,7 +37,7 @@ class Individual:
         self.time_step_survived.append(time_step)
 
     def get_fitness_score(self) -> float:
-        return np.mean(self.score_history) if self.score_history else 1
+        return np.mean(self.score_history) if self.score_history else 0
 
     def get_time_steps_survived(self) -> np.ndarray:
         return np.mean(self.time_step_survived)

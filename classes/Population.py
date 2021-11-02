@@ -25,33 +25,23 @@ class Population:
         return sorted_individuals[0]
 
     def run_generation(self):
-        self.config['render_cart'] = True
-
         for individual in self.individuals:
             run_cart(individual, self.config)
-            self.config['render_cart'] = False
 
-        self.individuals = self.evolve_population()
-
-    def evolve_population(self) -> List[Individual]:
+    def evolve_population(self):
         new_population = self.select_survivors(self.individuals)
-        # print('survivors: ', len(new_population))
 
         reproduction_criterion = get_criterion_function(self.config['evolution']['reproduction_criterion'])
 
         parents_a = reproduction_criterion(self.individuals, 1 - self.config['evolution']['survival_rate'], True)
         parents_b = reproduction_criterion(self.individuals, 1 - self.config['evolution']['survival_rate'], True)
-        # print('parents_a: ',len(parents_a))
-        # print('survival rate', self.config['evolution']['survival_rate'])
         np.random.shuffle(parents_a)
-        # print(len(new_population))
 
         for parent_a, parent_b in zip(parents_a, parents_b):
             child = parent_a.reproduce(parent_b)
             new_population.append(child)
 
-        # print('pop: ', len(new_population))
-        return sorted(new_population, key=lambda i: i.get_fitness_score(), reverse=True)
+        self.individuals = sorted(new_population, key=lambda i: i.get_fitness_score(), reverse=True)
 
     def select_survivors(self, individuals: List[Individual]) -> List[Individual]:
 
