@@ -4,11 +4,11 @@ from utils.general_utils import get_config
 
 
 # Run random search for configs
-def run_random_search(iterations=200):
+def run_random_search(iterations=300):
     print(f'Running random search for {iterations} iterations. See config.json for available parameters.')
     config = get_config()
 
-    mutation_rates = [0.001]
+    mutation_rates = [0.01]
     selection_criterions = ['fitness_proportional', 'elitist']
     fitness_functions = ['position_and_angle_based',
                          'position_based',
@@ -20,10 +20,10 @@ def run_random_search(iterations=200):
 
     for _ in range(iterations):
         config['stats'] = {}
-        config['mutation_rate'] = random.choice(mutation_rates)
-        config['selection_criterion'] = random.choice(selection_criterions)
-        config['fitness_function'] = random.choice(fitness_functions)
-        config['reproduction_criterion'] = random.choice(selection_criterions)
-        config['survival_rate'] = random.choice(survival_rates)
+        config['evolution']['mutation_rate'] = random.choice(mutation_rates)
+        config['evolution']['selection_criterion'] = random.choice(selection_criterions)
+        config['evolution']['fitness_function'] = random.choice(fitness_functions)
+        config['evolution']['reproduction_criterion'] = random.choice(selection_criterions)
+        config['evolution']['survival_rate'] = random.choice(survival_rates)
         print(f'-------Running config {_ + 1}/{iterations}-------')
         Config(config).run()
