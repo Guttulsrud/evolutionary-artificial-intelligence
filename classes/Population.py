@@ -31,7 +31,7 @@ class Population:
     def evolve_population(self):
         new_population = self.select_survivors(self.individuals)
 
-        reproduction_criterion = get_criterion_function(self.config['evolution']['reproduction_criterion'])
+        reproduction_criterion = get_criterion_function(self.config['evolution']['reproduction_selection_criterion'])
 
         parents_a = reproduction_criterion(self.individuals, 1 - self.config['evolution']['survival_rate'], True)
         parents_b = reproduction_criterion(self.individuals, 1 - self.config['evolution']['survival_rate'], True)
@@ -46,7 +46,7 @@ class Population:
     def select_survivors(self, individuals: List[Individual]) -> List[Individual]:
 
         individuals = sorted(individuals, key=lambda i: i.get_fitness_score(), reverse=True)
-        criterion_function = get_criterion_function(self.config['evolution']['selection_criterion'])
+        criterion_function = get_criterion_function(self.config['evolution']['survival_selection_criterion'])
         survivors = list(criterion_function(individuals, self.config['evolution']['survival_rate']))
 
         return survivors
