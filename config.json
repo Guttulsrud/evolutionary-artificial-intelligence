@@ -7,11 +7,11 @@
   },
   "evolution": {
     "population_limit": 300,
-    "n_generations": 50,
+    "n_generations": 40,
     "fitness_function": "position_and_angle_based",
     "reproduction_criterion": "fitness_proportional",
     "selection_criterion": "fitness_proportional",
-    "episodes_per_individual": 3,
+    "episodes_per_individual": 1,
     "mutation_rate": 0.001,
     "survival_rate": 0.1
   },

@@ -1,0 +1,570 @@
+{
+    "config": {
+        "general": {
+            "random_search": false,
+            "render_cart": false,
+            "render_ca": false,
+            "phenotype": "ca"
+        },
+        "evolution": {
+            "population_limit": 10,
+            "n_generations": 10,
+            "fitness_function": "position_and_angle_based",
+            "reproduction_criterion": "fitness_proportional",
+            "selection_criterion": "fitness_proportional",
+            "episodes_per_individual": 1,
+            "mutation_rate": 0.001,
+            "survival_rate": 0.1
+        },
+        "ca": {
+            "action_type": "index",
+            "time_steps": {
+                "min": 5,
+                "max": 6
+            },
+            "width": {
+                "min": 5,
+                "max": 6
+            },
+            "kernel_size": [
+                3
+            ],
+            "pole_angle": {
+                "min": -3,
+                "max": 3
+            },
+            "pole_velocity": {
+                "min": -3,
+                "max": 3
+            },
+            "cart_position": {
+                "min": -3,
+                "max": 3
+            },
+            "cart_velocity": {
+                "min": -3,
+                "max": 3
+            },
+            "dependent_properties": {
+                "inputs": [
+                    {
+                        "name": "angle_index"
+                    }
+                ],
+                "output": [
+                    {
+                        "name": "action_index"
+                    }
+                ],
+                "rule_number": {
+                    "min": 0
+                }
+            }
+        },
+        "nn": {
+            "hidden_layers": {
+                "min": 0,
+                "max": 3
+            },
+            "nodes": {
+                "min": 1,
+                "max": 5
+            },
+            "step_size": 0.1
+        }
+    },
+    "generations": [
+        {
+            "generation": 1,
+            "time_steps_survived": 35.0,
+            "best_individual": {
+                "time_steps": 5,
+                "width": 5,
+                "kernel_size": 3,
+                "action_index": 1,
+                "rule_number": 63,
+                "pole_angle": [
+                    {
+                        "value": 0.01,
+                        "index": 3
+                    }
+                ],
+                "pole_velocity": [
+                    {
+                        "value": 0.02,
+                        "index": 2
+                    }
+                ],
+                "cart_position": [
+                    {
+                        "value": -0.02,
+                        "index": 3
+                    }
+                ],
+                "cart_velocity": [
+                    {
+                        "value": -0.01,
+                        "index": 1
+                    }
+                ]
+            }
+        },
+        {
+            "generation": 2,
+            "time_steps_survived": 41.0,
+            "best_individual": {
+                "time_steps": 5,
+                "width": 5,
+                "kernel_size": 3,
+                "action_index": 1,
+                "rule_number": 55,
+                "pole_angle": [
+                    {
+                        "value": -0.02,
+                        "index": 2
+                    }
+                ],
+                "pole_velocity": [
+                    {
+                        "value": -0.01,
+                        "index": 4
+                    }
+                ],
+                "cart_position": [
+                    {
+                        "value": -0.01,
+                        "index": 4
+                    }
+                ],
+                "cart_velocity": [
+                    {
+                        "value": -0.02,
+                        "index": 1
+                    }
+                ]
+            }
+        },
+        {
+            "generation": 3,
+            "time_steps_survived": 42.0,
+            "best_individual": {
+                "time_steps": 5,
+                "width": 5,
+                "kernel_size": 3,
+                "action_index": 1,
+                "rule_number": 61,
+                "pole_angle": [
+                    {
+                        "value": 0.01,
+                        "index": 3
+                    }
+                ],
+                "pole_velocity": [
+                    {
+                        "value": 0.02,
+                        "index": 2
+                    }
+                ],
+                "cart_position": [
+                    {
+                        "value": -0.02,
+                        "index": 3
+                    }
+                ],
+                "cart_velocity": [
+                    {
+                        "value": -0.01,
+                        "index": 1
+                    }
+                ]
+            }
+        },
+        {
+            "generation": 4,
+            "time_steps_survived": 59.0,
+            "best_individual": {
+                "time_steps": 5,
+                "width": 5,
+                "kernel_size": 3,
+                "action_index": 1,
+                "rule_number": 61,
+                "pole_angle": [
+                    {
+                        "value": 0.01,
+                        "index": 3
+                    }
+                ],
+                "pole_velocity": [
+                    {
+                        "value": 0.02,
+                        "index": 2
+                    }
+                ],
+                "cart_position": [
+                    {
+                        "value": -0.02,
+                        "index": 3
+                    }
+                ],
+                "cart_velocity": [
+                    {
+                        "value": -0.01,
+                        "index": 1
+                    }
+                ]
+            }
+        },
+        {
+            "generation": 4,
+            "time_steps_survived": 59.0,
+            "best_individual": {
+                "time_steps": 5,
+                "width": 5,
+                "kernel_size": 3,
+                "action_index": 1,
+                "rule_number": 61,
+                "pole_angle": [
+                    {
+                        "value": 0.01,
+                        "index": 3
+                    }
+                ],
+                "pole_velocity": [
+                    {
+                        "value": 0.02,
+                        "index": 2
+                    }
+                ],
+                "cart_position": [
+                    {
+                        "value": -0.02,
+                        "index": 3
+                    }
+                ],
+                "cart_velocity": [
+                    {
+                        "value": -0.01,
+                        "index": 1
+                    }
+                ]
+            }
+        },
+        {
+            "generation": 4,
+            "time_steps_survived": 59.0,
+            "best_individual": {
+                "time_steps": 5,
+                "width": 5,
+                "kernel_size": 3,
+                "action_index": 1,
+                "rule_number": 61,
+                "pole_angle": [
+                    {
+                        "value": 0.01,
+                        "index": 3
+                    }
+                ],
+                "pole_velocity": [
+                    {
+                        "value": 0.02,
+                        "index": 2
+                    }
+                ],
+                "cart_position": [
+                    {
+                        "value": -0.02,
+                        "index": 3
+                    }
+                ],
+                "cart_velocity": [
+                    {
+                        "value": -0.01,
+                        "index": 1
+                    }
+                ]
+            }
+        },
+        {
+            "generation": 4,
+            "time_steps_survived": 59.0,
+            "best_individual": {
+                "time_steps": 5,
+                "width": 5,
+                "kernel_size": 3,
+                "action_index": 1,
+                "rule_number": 61,
+                "pole_angle": [
+                    {
+                        "value": 0.01,
+                        "index": 3
+                    }
+                ],
+                "pole_velocity": [
+                    {
+                        "value": 0.02,
+                        "index": 2
+                    }
+                ],
+                "cart_position": [
+                    {
+                        "value": -0.02,
+                        "index": 3
+                    }
+                ],
+                "cart_velocity": [
+                    {
+                        "value": -0.01,
+                        "index": 1
+                    }
+                ]
+            }
+        },
+        {
+            "generation": 4,
+            "time_steps_survived": 59.0,
+            "best_individual": {
+                "time_steps": 5,
+                "width": 5,
+                "kernel_size": 3,
+                "action_index": 1,
+                "rule_number": 61,
+                "pole_angle": [
+                    {
+                        "value": 0.0,
+                        "index": 3
+                    }
+                ],
+                "pole_velocity": [
+                    {
+                        "value": 0.02,
+                        "index": 2
+                    }
+                ],
+                "cart_position": [
+                    {
+                        "value": -0.02,
+                        "index": 3
+                    }
+                ],
+                "cart_velocity": [
+                    {
+                        "value": -0.01,
+                        "index": 1
+                    }
+                ]
+            }
+        },
+        {
+            "generation": 4,
+            "time_steps_survived": 59.0,
+            "best_individual": {
+                "time_steps": 5,
+                "width": 5,
+                "kernel_size": 3,
+                "action_index": 1,
+                "rule_number": 61,
+                "pole_angle": [
+                    {
+                        "value": 0.0,
+                        "index": 3
+                    }
+                ],
+                "pole_velocity": [
+                    {
+                        "value": 0.02,
+                        "index": 2
+                    }
+                ],
+                "cart_position": [
+                    {
+                        "value": -0.02,
+                        "index": 3
+                    }
+                ],
+                "cart_velocity": [
+                    {
+                        "value": -0.01,
+                        "index": 1
+                    }
+                ]
+            }
+        },
+        {
+            "generation": 4,
+            "time_steps_survived": 59.0,
+            "best_individual": {
+                "time_steps": 5,
+                "width": 5,
+                "kernel_size": 3,
+                "action_index": 1,
+                "rule_number": 61,
+                "pole_angle": [
+                    {
+                        "value": 0.0,
+                        "index": 3
+                    }
+                ],
+                "pole_velocity": [
+                    {
+                        "value": 0.02,
+                        "index": 2
+                    }
+                ],
+                "cart_position": [
+                    {
+                        "value": -0.02,
+                        "index": 3
+                    }
+                ],
+                "cart_velocity": [
+                    {
+                        "value": -0.01,
+                        "index": 1
+                    }
+                ]
+            }
+        }
+    ],
+    "individual_scores": [
+        {
+            "individuals": [
+                60.11052256129152,
+                48.52977733028877,
+                67.865890956738,
+                99.58093179812633,
+                56.98813053403918,
+                124.10737712388959,
+                67.63776527227259,
+                262.84880200281583,
+                66.30878604098919,
+                60.85445974009698
+            ]
+        },
+        {
+            "individuals": [
+                157.29253783808997,
+                330.17985265148593,
+                79.0666027548457,
+                42.94927065436186,
+                48.800265118309035,
+                187.4466155840433,
+                53.3585306865834,
+                159.0894284905267,
+                276.06556145807036,
+                62.27165664411899
+            ]
+        },
+        {
+            "individuals": [
+                69.43497036227691,
+                58.29319835747658,
+                297.6791332855941,
+                185.39223538420165,
+                99.52300848545441,
+                133.34155194106648,
+                317.9269662345849,
+                256.8591690923234,
+                176.93502202055788,
+                123.34425779524962
+            ]
+        },
+        {
+            "individuals": [
+                152.43821349844956,
+                506.3288619583359,
+                190.45731976226378,
+                51.14212209102406,
+                296.36159353148673,
+                69.39916178656094,
+                41.593840644145054,
+                104.05619603606797,
+                47.05553484598349,
+                305.6844330531834
+            ]
+        },
+        {
+            "individuals": [
+                92.06995730873001,
+                140.04715161169884,
+                266.2813622113794,
+                205.2487836741499,
+                211.97857961394124,
+                325.27523535218063,
+                159.94964971041065,
+                278.32655317968386,
+                170.63757496975444,
+                178.33578029403085
+            ]
+        },
+        {
+            "individuals": [
+                256.6640104729147,
+                287.5817716232066,
+                54.44021353909062,
+                86.92953806885346,
+                170.92206326401174,
+                90.16645913639782,
+                202.05356144543939,
+                347.35287721983065,
+                159.42068400745245,
+                113.86724103160495
+            ]
+        },
+        {
+            "individuals": [
+                188.7661563362656,
+                129.32883124347475,
+                84.44261178692447,
+                216.8448596807334,
+                263.09797404501404,
+                61.93786901607823,
+                161.87289745632205,
+                375.227485227929,
+                244.74501452905704,
+                136.2396275080232
+            ]
+        },
+        {
+            "individuals": [
+                67.38985979236767,
+                260.2205875120916,
+                198.83851641203302,
+                140.2762488669169,
+                199.85759360294398,
+                195.4097008724579,
+                143.1940815155923,
+                220.2977229194063,
+                118.01829100800236,
+                299.3335411987501
+            ]
+        },
+        {
+            "individuals": [
+                295.0280655440762,
+                192.70714000515602,
+                161.9500836071372,
+                85.61942751879691,
+                97.39754333032492,
+                69.31200800106903,
+                208.8448312030359,
+                275.7123201549677,
+                228.20743955690702,
+                76.7564786186014
+            ]
+        },
+        {
+            "individuals": [
+                266.6838119356414,
+                63.88784301773921,
+                71.82268914801325,
+                161.11853117745113,
+                67.89798244752103,
+                169.95368305278782,
+                127.51840290285931,
+                198.0469700268731,
+                76.70962034778364,
+                71.71558824435058
+            ]
+        }
+    ]
+}
