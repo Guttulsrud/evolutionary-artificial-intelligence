@@ -1,14 +1,49 @@
 import numpy as np
 from utils.general_utils import get_max_rule
-from utils.plot import render
+import random
 
 
 class CellularAutomaton:
-    def __init__(self, genotype: dict, config: dict):
+    def __init__(self, config: dict, genotype: dict = None):
         self.history = []
         self.genotype = genotype
-        self.rule_map = self.make_rule_map()
         self.config = config
+        self.mutated_genotype = None
+        if not genotype:
+            self.genotype = self.create_genotype()
+        self.rule_map = self.make_rule_map()
+
+    def create_genotype(self) -> dict:
+        config = self.config['ca']
+
+        width = random.randrange(config['width']['min'], config['width']['max'])
+        kernel_size = random.choice(config['kernel_size'])
+        genotype = {
+            'time_steps': random.randrange(config['time_steps']['min'], config['time_steps']['max']),
+            'width': width,
+            'kernel_size': kernel_size,
+            'action_index': random.randrange(0, width),
+            'rule_number': random.randrange(0, get_max_rule(kernel_size)),
+            'pole_angle': [{
+                'value': random.randrange(config['pole_angle']['min'],
+                                          config['pole_angle']['max']) / 100,
+                'index': random.randrange(0, width)}],
+            'pole_velocity': [{
+                'value': random.randrange(config['pole_velocity']['min'],
+                                          config['pole_velocity']['max']) / 100,
+                'index': random.randrange(0, width)}],
+            'cart_position': [{
+                'value': random.randrange(config['cart_position']['min'],
+                                          config['cart_position']['max']) / 100,
+                'index': random.randrange(0, width)}],
+            'cart_velocity': [{
+                'value': random.randrange(config['cart_velocity']['min'],
+                                          config['cart_velocity']['max']) / 100,
+                'index': random.randrange(0, width)}]
+
+        }
+
+        return genotype
 
     def get_history(self):
         return self.history
@@ -92,6 +127,64 @@ class CellularAutomaton:
         rule_map = {binary_keys[i]: rule[i] for i in range(n_configurations)}
 
         return rule_map
+
+    def mutate(self, other_parent) -> dict:
+        self.mutated_genotype = self.genotype.copy()
+
+        self.mutated_genotype['rule_number'] = self.mutate_rule_number(other_parent)
+
+        self.mutate_gene('pole_angle')
+        self.mutate_gene('pole_velocity')
+        self.mutate_gene('cart_position')
+        self.mutate_gene('cart_velocity')
+
+        return self.mutated_genotype
+
+    def mutate_gene(self, gene_type: str) -> None:
+        self.mutated_genotype[gene_type] = self.mutate_index(self.genotype, gene_type)
+        self.mutated_genotype[gene_type] = self.mutate_threshold(self.genotype, gene_type)
+
+    def mutate_index(self, genotype: dict, gene_type: str):
+        thresholds = genotype[gene_type]
+
+        for idx, t in enumerate(thresholds):
+
+            will_mutate = random.uniform(0, 1) < self.config['evolution']['mutation_rate']
+            if will_mutate:
+                thresholds[idx]['index'] = random.randrange(0, genotype['width'])
+
+        return thresholds
+
+    def mutate_threshold(self, genotype: dict, gene_type: str):
+        thresholds = genotype[gene_type]
+
+        for idx, t in enumerate(thresholds):
+            will_mutate = random.uniform(0, 1) < self.config['evolution']['mutation_rate']
+
+            if will_mutate:
+                positive_mutation = random.choice([0, 1])
+                thresholds[idx]['value'] += 0.01 if positive_mutation else -0.01
+
+        return thresholds
+
+    def mutate_rule_number(self, other_parent):
+
+        rule_number_parent_one = list(np.binary_repr(self.genotype['rule_number']))
+        rule_number_parent_two = list(np.binary_repr(other_parent.genotype['rule_number']))
+        crossover_index = random.randrange(0, len(rule_number_parent_one))
+        rule_number = rule_number_parent_one[:crossover_index] + rule_number_parent_two[crossover_index:]
+
+        value_map = {
+            '1': '0',
+            '0': '1'
+        }
+        for idx, i in enumerate(rule_number):
+            will_mutate = random.uniform(0, 1) < self.config['evolution']['mutation_rate']
+            if will_mutate:
+                rule_number[idx] = value_map[i]
+        rule_number = ''.join(rule_number)
+        rule_number = int(rule_number, 2)
+        return rule_number
 
 
 def determine_threshold(threshold_object, value):

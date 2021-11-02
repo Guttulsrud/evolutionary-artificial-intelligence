@@ -3,14 +3,14 @@
     "random_search": true,
     "render_cart": false,
     "render_ca": false,
-    "phenotype": "nn"
+    "phenotype": "ca"
   },
   "evolution": {
-    "population_limit": 300,
-    "n_generations": 50,
+    "population_limit": 400,
+    "n_generations": 80,
     "fitness_function": "position_and_angle_based",
     "reproduction_criterion": "fitness_proportional",
-    "selection_criterion": "tournament",
+    "selection_criterion": "fitness_proportional",
     "episodes_per_individual": 2,
     "mutation_rate": 0.001,
     "survival_rate": 0.1

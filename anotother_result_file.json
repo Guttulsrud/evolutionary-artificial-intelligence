@@ -5,14 +5,14 @@
                 "random_search": true,
                 "render_cart": false,
                 "render_ca": false,
-                "phenotype": "nn"
+                "phenotype": "ca"
             },
             "evolution": {
-                "population_limit": 300,
-                "n_generations": 50,
+                "population_limit": 100,
+                "n_generations": 20,
                 "fitness_function": "position_and_angle_based",
                 "reproduction_criterion": "fitness_proportional",
-                "selection_criterion": "tournament",
+                "selection_criterion": "fitness_proportional",
                 "episodes_per_individual": 2,
                 "mutation_rate": 0.001,
                 "survival_rate": 0.1
@@ -67,59 +67,29 @@
                 "step_size": 0.1
             },
             "stats": {
-                "Best generation": 1,
-                "Time steps": 14999.0,
+                "Best generation": 19,
+                "Time steps": 285.0,
                 "Time step history": [
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    7606.25,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    3768.625,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    11354.25,
-                    14999.0,
-                    9589.125,
-                    10671.1,
-                    10198.333333333334,
-                    7503.5,
-                    7555.0,
-                    7504.0,
-                    3774.0,
-                    2523.0,
-                    116.5,
+                    203.0,
+                    189.0,
+                    31.5,
+                    110.5,
+                    41.0,
+                    97.5,
+                    104.5,
+                    83.5,
+                    110.0,
+                    101.5,
+                    146.5,
+                    44.25,
                     97.0,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN
+                    223.0,
+                    91.0,
+                    83.0,
+                    63.5,
+                    95.5,
+                    285.0,
+                    225.25
                 ]
             },
             "reproduction_criterion": "elitist",
@@ -130,14 +100,14 @@
                 "random_search": true,
                 "render_cart": false,
                 "render_ca": false,
-                "phenotype": "nn"
+                "phenotype": "ca"
             },
             "evolution": {
-                "population_limit": 300,
-                "n_generations": 50,
+                "population_limit": 100,
+                "n_generations": 20,
                 "fitness_function": "position_and_angle_based",
                 "reproduction_criterion": "fitness_proportional",
-                "selection_criterion": "tournament",
+                "selection_criterion": "fitness_proportional",
                 "episodes_per_individual": 2,
                 "mutation_rate": 0.001,
                 "survival_rate": 0.1
@@ -192,59 +162,124 @@
                 "step_size": 0.1
             },
             "stats": {
-                "Best generation": 1,
-                "Time steps": 14999.0,
+                "Best generation": 20,
+                "Time steps": 464.5,
                 "Time step history": [
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    11271.25,
-                    12513.833333333334,
-                    13135.125,
-                    13507.9,
-                    7758.5,
-                    247.5,
-                    14999.0,
-                    14999.0,
-                    14779.666666666666,
-                    14834.5,
-                    14867.4,
-                    14999.0,
-                    1565.0,
-                    139.0,
-                    169.75,
-                    4817.5,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN
+                    168.5,
+                    158.0,
+                    147.0,
+                    135.5,
+                    49.5,
+                    267.0,
+                    84.0,
+                    58.0,
+                    43.5,
+                    28.5,
+                    91.0,
+                    229.75,
+                    219.66666666666666,
+                    303.5,
+                    269.0,
+                    299.5,
+                    256.8333333333333,
+                    260.0,
+                    238.9,
+                    464.5
+                ]
+            },
+            "reproduction_criterion": "tournament",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false,
+                "phenotype": "ca"
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 20,
+                "fitness_function": "position_and_angle_based",
+                "reproduction_criterion": "fitness_proportional",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {
+                "hidden_layers": [],
+                "step_size": 0.1
+            },
+            "stats": {
+                "Best generation": 7,
+                "Time steps": 441.0,
+                "Time step history": [
+                    79.5,
+                    36.25,
+                    43.0,
+                    50.5,
+                    59.5,
+                    48.0,
+                    441.0,
+                    68.0,
+                    202.5,
+                    211.0,
+                    110.5,
+                    139.25,
+                    103.33333333333333,
+                    74.0,
+                    139.5,
+                    218.5,
+                    168.25,
+                    136.33333333333334,
+                    109.5,
+                    137.5
                 ]
             },
             "reproduction_criterion": "fitness_proportional",
@@ -255,14 +290,14 @@
                 "random_search": true,
                 "render_cart": false,
                 "render_ca": false,
-                "phenotype": "nn"
+                "phenotype": "ca"
             },
             "evolution": {
-                "population_limit": 300,
-                "n_generations": 50,
+                "population_limit": 100,
+                "n_generations": 20,
                 "fitness_function": "position_and_angle_based",
                 "reproduction_criterion": "fitness_proportional",
-                "selection_criterion": "tournament",
+                "selection_criterion": "fitness_proportional",
                 "episodes_per_individual": 2,
                 "mutation_rate": 0.001,
                 "survival_rate": 0.1
@@ -317,59 +352,124 @@
                 "step_size": 0.1
             },
             "stats": {
-                "Best generation": 1,
-                "Time steps": 14999.0,
+                "Best generation": 14,
+                "Time steps": 464.0,
                 "Time step history": [
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    8358.5,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    12787.75,
-                    7561.5,
-                    14999.0,
-                    7748.666666666667,
-                    232.0,
-                    7505.5,
-                    47.5,
-                    216.0,
-                    916.0,
-                    1697.5,
-                    14999.0,
-                    14999.0,
-                    1079.0,
-                    335.5,
-                    14999.0,
-                    7557.5,
-                    7504.0,
-                    3986.5,
-                    5158.833333333333,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN
+                    86.5,
+                    67.5,
+                    110.5,
+                    119.0,
+                    75.0,
+                    95.0,
+                    454.5,
+                    364.5,
+                    334.1666666666667,
+                    391.625,
+                    136.5,
+                    182.5,
+                    150.0,
+                    464.0,
+                    256.75,
+                    272.5,
+                    263.5,
+                    220.4,
+                    211.5,
+                    149.5
+                ]
+            },
+            "reproduction_criterion": "fitness_proportional",
+            "render_cart": false
+        },
+        {
+            "general": {
+                "random_search": true,
+                "render_cart": false,
+                "render_ca": false,
+                "phenotype": "ca"
+            },
+            "evolution": {
+                "population_limit": 100,
+                "n_generations": 20,
+                "fitness_function": "position_and_angle_based",
+                "reproduction_criterion": "fitness_proportional",
+                "selection_criterion": "fitness_proportional",
+                "episodes_per_individual": 2,
+                "mutation_rate": 0.001,
+                "survival_rate": 0.1
+            },
+            "ca": {
+                "action_type": "index",
+                "time_steps": {
+                    "min": 5,
+                    "max": 6
+                },
+                "width": {
+                    "min": 5,
+                    "max": 6
+                },
+                "kernel_size": [
+                    3
+                ],
+                "pole_angle": {
+                    "min": -3,
+                    "max": 3
+                },
+                "pole_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_position": {
+                    "min": -3,
+                    "max": 3
+                },
+                "cart_velocity": {
+                    "min": -3,
+                    "max": 3
+                },
+                "dependent_properties": {
+                    "inputs": [
+                        {
+                            "name": "angle_index"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "name": "action_index"
+                        }
+                    ],
+                    "rule_number": {
+                        "min": 0
+                    }
+                }
+            },
+            "nn": {
+                "hidden_layers": [],
+                "step_size": 0.1
+            },
+            "stats": {
+                "Best generation": 2,
+                "Time steps": 385.75,
+                "Time step history": [
+                    321.5,
+                    385.75,
+                    169.0,
+                    50.5,
+                    90.0,
+                    148.0,
+                    294.0,
+                    317.0,
+                    205.75,
+                    82.5,
+                    58.5,
+                    41.5,
+                    170.5,
+                    69.0,
+                    106.5,
+                    98.5,
+                    83.0,
+                    171.5,
+                    86.5,
+                    141.5
                 ]
             },
             "reproduction_criterion": "elitist",
@@ -380,14 +480,14 @@
                 "random_search": true,
                 "render_cart": false,
                 "render_ca": false,
-                "phenotype": "nn"
+                "phenotype": "ca"
             },
             "evolution": {
-                "population_limit": 300,
-                "n_generations": 50,
+                "population_limit": 100,
+                "n_generations": 20,
                 "fitness_function": "position_and_angle_based",
                 "reproduction_criterion": "fitness_proportional",
-                "selection_criterion": "tournament",
+                "selection_criterion": "fitness_proportional",
                 "episodes_per_individual": 2,
                 "mutation_rate": 0.001,
                 "survival_rate": 0.1
@@ -442,62 +542,32 @@
                 "step_size": 0.1
             },
             "stats": {
-                "Best generation": 1,
-                "Time steps": 14999.0,
+                "Best generation": 6,
+                "Time steps": 205.5,
                 "Time step history": [
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    7751.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    1938.75,
-                    1577.2,
-                    7075.0,
-                    7528.0,
-                    7542.0,
-                    14999.0,
-                    14999.0,
-                    2053.5,
-                    3020.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    14999.0,
-                    162.5,
-                    14999.0,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN,
-                    NaN
+                    99.0,
+                    77.0,
+                    26.5,
+                    49.0,
+                    43.5,
+                    205.5,
+                    149.5,
+                    196.0,
+                    81.5,
+                    110.5,
+                    87.33333333333333,
+                    179.5,
+                    71.0,
+                    151.5,
+                    161.0,
+                    105.25,
+                    160.0,
+                    93.0,
+                    91.0,
+                    171.5
                 ]
             },
-            "reproduction_criterion": "elitist",
+            "reproduction_criterion": "tournament",
             "render_cart": false
         }
     ]

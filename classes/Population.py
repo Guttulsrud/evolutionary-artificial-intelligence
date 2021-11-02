@@ -1,10 +1,7 @@
-from typing import List, Tuple
-import random
+from typing import List
 from classes.Individual import Individual
 from classes.cartpole import run_cart
-from utils.general_utils import get_max_rule
-from utils.evolution import get_criterion_function, fitness_proportional_selection
-from scipy.special import softmax
+from utils.evolution import get_criterion_function
 import numpy as np
 
 
@@ -17,50 +14,8 @@ class Population:
     def create(self):
         population_limit = self.config['evolution']['population_limit']
 
-        for x in range(population_limit):
-            genotype = self.create_genotype()
-            individual = Individual(genotype=genotype, config=self.config)
-
-            self.individuals.append(individual)
-
-    def create_genotype(self) -> dict:
-
-        if self.config['general']['phenotype'] == 'nn':
-            genotype = {
-                'hidden_layers': [4, 4]
-            }
-
-        else:
-            config = self.config['ca']
-
-            width = random.randrange(config['width']['min'], config['width']['max'])
-            kernel_size = random.choice(config['kernel_size'])
-            genotype = {
-                'time_steps': random.randrange(config['time_steps']['min'], config['time_steps']['max']),
-                'width': width,
-                'kernel_size': kernel_size,
-                'action_index': random.randrange(0, width),
-                'rule_number': random.randrange(0, get_max_rule(kernel_size)),
-                'pole_angle': [{
-                    'value': random.randrange(config['pole_angle']['min'],
-                                              config['pole_angle']['max']) / 100,
-                    'index': random.randrange(0, width)}],
-                'pole_velocity': [{
-                    'value': random.randrange(config['pole_velocity']['min'],
-                                              config['pole_velocity']['max']) / 100,
-                    'index': random.randrange(0, width)}],
-                'cart_position': [{
-                    'value': random.randrange(config['cart_position']['min'],
-                                              config['cart_position']['max']) / 100,
-                    'index': random.randrange(0, width)}],
-                'cart_velocity': [{
-                    'value': random.randrange(config['cart_velocity']['min'],
-                                              config['cart_velocity']['max']) / 100,
-                    'index': random.randrange(0, width)}]
-
-            }
-
-        return genotype
+        for _ in range(population_limit):
+            self.individuals.append(Individual(config=self.config))
 
     def get_individuals(self) -> List[Individual]:
         return self.individuals
@@ -80,17 +35,22 @@ class Population:
 
     def evolve_population(self) -> List[Individual]:
         new_population = self.select_survivors(self.individuals)
+        # print('survivors: ', len(new_population))
+
         reproduction_criterion = get_criterion_function(self.config['evolution']['reproduction_criterion'])
 
         parents_a = reproduction_criterion(self.individuals, 1 - self.config['evolution']['survival_rate'], True)
         parents_b = reproduction_criterion(self.individuals, 1 - self.config['evolution']['survival_rate'], True)
-
+        # print('parents_a: ',len(parents_a))
+        # print('survival rate', self.config['evolution']['survival_rate'])
         np.random.shuffle(parents_a)
+        # print(len(new_population))
 
         for parent_a, parent_b in zip(parents_a, parents_b):
             child = parent_a.reproduce(parent_b)
             new_population.append(child)
 
+        # print('pop: ', len(new_population))
         return sorted(new_population, key=lambda i: i.get_fitness_score(), reverse=True)
 
     def select_survivors(self, individuals: List[Individual]) -> List[Individual]:

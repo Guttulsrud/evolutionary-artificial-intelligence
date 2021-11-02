@@ -5,7 +5,7 @@ from classes.Individual import Individual
 
 env = gym.make('CartPole-v0')
 max_steps = 15_000
-# env._max_episode_steps = max_steps
+env._max_episode_steps = max_steps
 
 
 def run_cart(individual: Individual, config: dict) -> [int]:
@@ -13,7 +13,7 @@ def run_cart(individual: Individual, config: dict) -> [int]:
         observation = format_observation(env.reset())
 
         fitnesses = np.array([])
-        for t in range(100):
+        for t in range(max_steps):
             if config['general']['render_cart']:
                 env.render()
 
