@@ -17,7 +17,7 @@ def run_random_search(iterations=300):
                          'time_based',
                          'total_time_steps']
     survival_rates = [0.1, 0.2]
-    episodes_per_individual = [2, 3, 5]
+    episodes_per_individual = [3, 5]
 
     for _ in range(iterations):
         config['stats'] = {}

@@ -1,6 +1,6 @@
 {
   "general": {
-    "random_search": false,
+    "random_search": true,
     "render_cart": false,
     "render_ca": false,
     "phenotype": "ca"
