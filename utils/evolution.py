@@ -34,8 +34,12 @@ def tournament(population: list, survival_rate: float, replace=False):
     selected_population = []
     population_copy = population.copy()
 
+    tournament_size = 20
+    while len(population) - size < tournament_size:
+        tournament_size -= 1
+
     for _ in range(size):
-        contenders = np.random.choice(population_copy, size=20, replace=False)
+        contenders = np.random.choice(population_copy, size=tournament_size, replace=False)
         winner = sorted(contenders, key=lambda i: i.get_fitness_score(), reverse=True)[0]
         selected_population.append(winner)
         population_copy.remove(winner)
