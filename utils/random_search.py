@@ -23,12 +23,12 @@ def run_random_search(iterations=300):
                          'total_time_steps']
     survival_rates = [0, 0.1, 0.2]
 
-    for _ in range(iterations):
+    for count in range(iterations):
         config['stats'] = {}
         config['evolution']['mutation_rate'] = random.choice(mutation_rates)
         config['evolution']['survival_selection_criterion'] = random.choice(selection_criteria)
         config['evolution']['fitness_function'] = random.choice(fitness_functions)
         config['evolution']['reproduction_selection_criterion'] = random.choice(selection_criteria)
         config['evolution']['survival_rate'] = random.choice(survival_rates)
-        print(f'-------Running config {_ + 1}/{iterations}-------\n')
+        print(f'-------Running config {count + 1}/{iterations}-------\n')
         Config(config).run()
