@@ -55,10 +55,14 @@ class NeuralNetwork:
         return action
 
     def mutate(self, other_parent):
-        # other_parent: not implemented
-        self.genotype['weights'] = self.mutate_weights()
+        mutated_genotype = self.genotype.copy()
 
-        return self.genotype
+        if random.randint(0, 1):
+            mutated_genotype['weights'] = self.mutate_weights()
+        else:
+            mutated_genotype['weights'] = other_parent.get_phenotype().mutate_weights()
+
+        return mutated_genotype
 
     def mutate_weights(self):
         step_size = self.config['nn']['step_size']
