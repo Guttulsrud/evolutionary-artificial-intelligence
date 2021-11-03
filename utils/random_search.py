@@ -4,7 +4,7 @@ from utils.general_utils import get_config
 
 
 # Run random search for configs
-def run_random_search(iterations=300):
+def run_random_search(iterations=100):
     print(f'Running random search for {iterations} iterations. See config.json for available parameters.')
     config = get_config()
 

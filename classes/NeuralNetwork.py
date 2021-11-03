@@ -8,6 +8,7 @@ class NeuralNetwork:
         self.genotype = genotype
         self.config = config
         if not genotype:
+            self.genotype = {}
             self.create_genotype()
 
         self.nodes_per_layer = []
@@ -20,6 +21,7 @@ class NeuralNetwork:
         self.build_network()
 
     def build_network(self):
+
         self.nodes_per_layer = [4, *self.genotype['hidden_layers'], 2]
 
         for count, current_layer_node_count in enumerate(self.nodes_per_layer[1:]):
@@ -37,12 +39,11 @@ class NeuralNetwork:
 
     def create_genotype(self):
         layer_count_min = self.config['nn']['hidden_layers']['min']
-        layer_count_max = self.config['nn']['nodes']['max']
+        layer_count_max = self.config['nn']['hidden_layers']['max']
         node_count_min = self.config['nn']['nodes']['min']
         node_count_max = self.config['nn']['nodes']['max']
 
         layer_count = random.randint(layer_count_min, layer_count_max + 1)
-
         self.genotype['hidden_layers'] = [random.randint(node_count_min, node_count_max + 1)
                                           for _ in range(layer_count)]
 
