@@ -8,7 +8,7 @@ def run_random_search(iterations=300):
     print(f'Running random search for {iterations} iterations. See config.json for available parameters.')
     config = get_config()
 
-    mutation_rates = [0.01]
+    mutation_rates = [0.001]
     selection_criteria = ['fitness_proportional',
                           'elitist',
                           'rank_proportional',

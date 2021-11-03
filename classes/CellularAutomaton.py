@@ -1,4 +1,5 @@
 import numpy as np
+
 from utils.general_utils import get_max_rule
 import random
 
@@ -128,21 +129,22 @@ class CellularAutomaton:
         return rule_map
 
     def mutate(self, other_parent) -> dict:
-        self.mutated_genotype = self.genotype.copy()
+        mutated_genotype = self.genotype.copy()
 
-        self.mutated_genotype['rule_number'] = self.mutate_rule_number(other_parent)
+        mutated_genotype['rule_number'] = self.mutate_rule_number(other_parent)
 
-        # These do not care about the other parents values
-        self.mutate_gene('pole_angle')
-        self.mutate_gene('pole_velocity')
-        self.mutate_gene('cart_position')
-        self.mutate_gene('cart_velocity')
+        for gene_name in ['pole_angle', 'pole_velocity', 'cart_position', 'cart_velocity']:
+            if random.randint(0, 1):
+                self.mutate_gene(mutated_genotype, gene_name)
+            else:
+                other_parent.get_phenotype().mutate_gene(mutated_genotype, gene_name)
 
-        return self.mutated_genotype
+        return mutated_genotype
 
-    def mutate_gene(self, gene_type: str) -> None:
-        self.mutated_genotype[gene_type] = self.mutate_index(self.genotype, gene_type)
-        self.mutated_genotype[gene_type] = self.mutate_threshold(self.genotype, gene_type)
+    def mutate_gene(self, gene, gene_type: str):
+        gene[gene_type] = self.mutate_index(self.genotype, gene_type)
+        gene[gene_type] = self.mutate_threshold(self.genotype, gene_type)
+        return gene[gene_type]
 
     def mutate_index(self, genotype: dict, gene_type: str):
         thresholds = genotype[gene_type]
