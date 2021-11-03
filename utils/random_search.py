@@ -26,10 +26,9 @@ def run_random_search(iterations=300):
     for _ in range(iterations):
         config['stats'] = {}
         config['evolution']['mutation_rate'] = random.choice(mutation_rates)
-        config['evolution']['survival_selection_criterion'] = 'tournament'
         config['evolution']['survival_selection_criterion'] = random.choice(selection_criteria)
         config['evolution']['fitness_function'] = random.choice(fitness_functions)
         config['evolution']['reproduction_selection_criterion'] = random.choice(selection_criteria)
         config['evolution']['survival_rate'] = random.choice(survival_rates)
-        print(f'-------Running config {_ + 1}/{iterations}-------')
+        print(f'-------Running config {_ + 1}/{iterations}-------\n')
         Config(config).run()
