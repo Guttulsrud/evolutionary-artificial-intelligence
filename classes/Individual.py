@@ -50,8 +50,8 @@ class Individual:
             self.genotype['weights'] = list(self.genotype['weights'])
         return self.genotype
 
-    def reproduce(self, parent_genotype):
-        genotype = self.phenotype.mutate(parent_genotype)
+    def reproduce(self, other_parent):
+        genotype = self.phenotype.mutate(other_parent)
 
         child = Individual(parent_genotype=genotype, config=self.config)
         return child

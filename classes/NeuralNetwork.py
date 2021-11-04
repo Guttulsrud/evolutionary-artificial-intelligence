@@ -7,15 +7,15 @@ class NeuralNetwork:
     def __init__(self, config: dict, genotype: dict = None):
         self.genotype = genotype
         self.config = config
-        if not genotype:
+        if not self.genotype:
             self.genotype = {}
             self.create_genotype()
-
+            self.genotype['weights'] = []
         self.nodes_per_layer = []
         self.layer_shapes = []
         self.layer_weight_count = []
         self.network = []
-        self.genotype['weights'] = []
+
         self.activation_function = lambda n: np.maximum(n, 0)
 
         self.build_network()
@@ -56,11 +56,12 @@ class NeuralNetwork:
         return action
 
     def mutate(self, other_parent):
-        mutated_genotype = self.genotype.copy()
 
         if random.randint(0, 1):
+            mutated_genotype = self.genotype
             mutated_genotype['weights'] = self.mutate_weights()
         else:
+            mutated_genotype = other_parent.get_genotype().copy()
             mutated_genotype['weights'] = other_parent.get_phenotype().mutate_weights()
 
         return mutated_genotype

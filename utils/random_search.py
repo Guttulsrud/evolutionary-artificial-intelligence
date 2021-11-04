@@ -1,6 +1,7 @@
 import random
 from classes.Config import Config
 from utils.general_utils import get_config
+from tqdm import tqdm
 
 
 # Run random search for configs
@@ -8,7 +9,7 @@ def run_random_search(iterations=100):
     print(f'Running random search for {iterations} iterations. See config.json for available parameters.')
     config = get_config()
 
-    mutation_rates = [0.001]
+    mutation_rates = [0.01, 0.003, 0.001]
     selection_criteria = ['fitness_proportional',
                           'elitist',
                           'rank_proportional',
@@ -30,5 +31,5 @@ def run_random_search(iterations=100):
         config['evolution']['fitness_function'] = random.choice(fitness_functions)
         config['evolution']['reproduction_selection_criterion'] = random.choice(selection_criteria)
         config['evolution']['survival_rate'] = random.choice(survival_rates)
-        print(f'-------Running config {count + 1}/{iterations}-------\n')
+        print(f'\n-------Running config {count + 1}/{iterations}-------\n')
         Config(config).run()
