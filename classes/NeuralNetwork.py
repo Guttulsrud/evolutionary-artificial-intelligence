@@ -4,9 +4,13 @@ import random
 
 
 class NeuralNetwork:
-    def __init__(self, genotype: dict, config: dict):
+    def __init__(self, config: dict, genotype: dict = None):
         self.genotype = genotype
         self.config = config
+        if not genotype:
+            self.genotype = {}
+            self.create_genotype()
+
         self.nodes_per_layer = []
         self.layer_shapes = []
         self.layer_weight_count = []
@@ -17,6 +21,7 @@ class NeuralNetwork:
         self.build_network()
 
     def build_network(self):
+
         self.nodes_per_layer = [4, *self.genotype['hidden_layers'], 2]
 
         for count, current_layer_node_count in enumerate(self.nodes_per_layer[1:]):
@@ -32,6 +37,16 @@ class NeuralNetwork:
         network = [list(islice(weights_iter, elem)) for elem in self.layer_weight_count]
         self.network = [np.reshape(weights, shape) for weights, shape in zip(network, self.layer_shapes)]
 
+    def create_genotype(self):
+        layer_count_min = self.config['nn']['hidden_layers']['min']
+        layer_count_max = self.config['nn']['hidden_layers']['max']
+        node_count_min = self.config['nn']['nodes']['min']
+        node_count_max = self.config['nn']['nodes']['max']
+
+        layer_count = random.randint(layer_count_min, layer_count_max + 1)
+        self.genotype['hidden_layers'] = [random.randint(node_count_min, node_count_max + 1)
+                                          for _ in range(layer_count)]
+
     def run(self, observation: dict) -> int:
         layer_input = list(observation.values())
         for layer in self.network:
@@ -40,7 +55,17 @@ class NeuralNetwork:
         action = output.argmax(axis=0)
         return action
 
-    def mutate(self):
+    def mutate(self, other_parent):
+        mutated_genotype = self.genotype.copy()
+
+        if random.randint(0, 1):
+            mutated_genotype['weights'] = self.mutate_weights()
+        else:
+            mutated_genotype['weights'] = other_parent.get_phenotype().mutate_weights()
+
+        return mutated_genotype
+
+    def mutate_weights(self):
         step_size = self.config['nn']['step_size']
         weights_copy = self.genotype['weights']
         for index, weight in enumerate(self.genotype['weights']):

@@ -2,19 +2,20 @@
   "general": {
     "random_search": true,
     "render_cart": false,
-    "render_ca": false
+    "render_ca": false,
+    "phenotype": "nn"
   },
   "evolution": {
-    "population_limit": 20,
-    "n_generations": 3,
+    "population_limit": 50,
+    "n_generations": 40,
     "fitness_function": "position_and_angle_based",
-    "reproduction_criterion": "fitness_proportional",
-    "selection_criterion": "tournament",
-    "episodes_per_individual": 2,
+    "reproduction_selection_criterion": "fitness_proportional",
+    "survival_selection_criterion": "tournament",
+    "episodes_per_individual": 3,
     "mutation_rate": 0.001,
     "survival_rate": 0.1
   },
-  "ca": {
+  "ca":   {
     "action_type": "index",
     "time_steps": {
       "min": 5,
@@ -60,5 +61,14 @@
     }
   },
   "nn": {
+    "hidden_layers": {
+      "min": 1,
+      "max": 3
+    },
+    "nodes": {
+      "min": 1,
+      "max": 5
+    },
+    "step_size": 0.1
   }
 }
