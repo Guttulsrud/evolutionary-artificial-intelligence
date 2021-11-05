@@ -12,7 +12,7 @@ class CellularAutomaton:
         self.mutated_genotype = None
         if not genotype:
             self.genotype = self.create_genotype()
-        self.rule_map = self.make_rule_map()  # TODO: Rename to Lookup Table
+        self.rule_map = self.make_rule_map()
 
     def create_genotype(self) -> dict:
         template = self.config['ca']
