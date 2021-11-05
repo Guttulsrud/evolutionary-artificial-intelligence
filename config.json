@@ -3,16 +3,16 @@
     "random_search": true,
     "render_cart": false,
     "render_ca": false,
-    "phenotype": "nn"
+    "phenotype": "ca"
   },
   "evolution": {
-    "population_limit": 50,
+    "population_limit": 300,
     "n_generations": 40,
     "fitness_function": "position_and_angle_based",
     "reproduction_selection_criterion": "fitness_proportional",
     "survival_selection_criterion": "tournament",
     "episodes_per_individual": 1,
-    "mutation_rate": 0.001,
+    "mutation_rate": 0.01,
     "survival_rate": 0.1
   },
   "ca":   {

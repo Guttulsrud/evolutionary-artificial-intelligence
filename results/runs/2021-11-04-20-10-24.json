@@ -7,14 +7,14 @@
             "phenotype": "ca"
         },
         "evolution": {
-            "population_limit": 300,
+            "population_limit": 10,
             "n_generations": 40,
             "fitness_function": "total_time_steps",
             "reproduction_selection_criterion": "elitist",
             "survival_selection_criterion": "fitness_proportional",
-            "episodes_per_individual": 3,
-            "mutation_rate": 0.001,
-            "survival_rate": 0
+            "episodes_per_individual": 1,
+            "mutation_rate": 0.01,
+            "survival_rate": 0.1
         },
         "ca": {
             "action_type": "index",
